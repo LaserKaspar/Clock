@@ -12,7 +12,6 @@ import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.UserManager;
 import android.provider.OpenableColumns;
-import android.provider.Settings;
 
 import androidx.annotation.AnyRes;
 
@@ -76,10 +75,6 @@ public class RingtoneUtils {
      * {@code false} otherwise.
      */
     public static boolean isRingtoneUriReadable(Context context, Uri uri) {
-        if (Settings.System.DEFAULT_ALARM_ALERT_URI.equals(uri)) {
-            return true;
-        }
-
         try (InputStream stream = context.getContentResolver().openInputStream(uri)) {
             return stream != null;
         } catch (Exception e) {
