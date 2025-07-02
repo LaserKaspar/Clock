@@ -94,44 +94,6 @@
     <string name="auto_silence_20_minutes">20 分钟</string>
     <string name="auto_silence_25_minutes">25 分钟</string>
     <string name="label_off">关闭</string>
-    <string name="crescendo_5_seconds">5 秒</string>
-    <string name="crescendo_10_seconds">10 秒</string>
-    <string name="crescendo_15_seconds">15 秒</string>
-    <string name="crescendo_20_seconds">20 秒</string>
-    <string name="crescendo_30_seconds">30 秒</string>
-    <string name="crescendo_40_seconds">40 秒</string>
-    <string name="crescendo_50_seconds">50 秒</string>
-    <string name="crescendo_60_seconds">60 秒</string>
-    <string name="snooze_duration_1_minute">1 分钟</string>
-    <string name="snooze_duration_2_minutes">2 分钟</string>
-    <string name="snooze_duration_3_minutes">3 分钟</string>
-    <string name="snooze_duration_4_minutes">4 分钟</string>
-    <string name="snooze_duration_5_minutes">5 分钟</string>
-    <string name="snooze_duration_6_minutes">6 分钟</string>
-    <string name="snooze_duration_7_minutes">7 分钟</string>
-    <string name="snooze_duration_8_minutes">8 分钟</string>
-    <string name="snooze_duration_9_minutes">9 分钟</string>
-    <string name="snooze_duration_10_minutes">10 分钟</string>
-    <string name="snooze_duration_11_minutes">11 分钟</string>
-    <string name="snooze_duration_12_minutes">12 分钟</string>
-    <string name="snooze_duration_13_minutes">13 分钟</string>
-    <string name="snooze_duration_14_minutes">14 分钟</string>
-    <string name="snooze_duration_15_minutes">15 分钟</string>
-    <string name="snooze_duration_16_minutes">16 分钟</string>
-    <string name="snooze_duration_17_minutes">17 分钟</string>
-    <string name="snooze_duration_18_minutes">18 分钟</string>
-    <string name="snooze_duration_19_minutes">19 分钟</string>
-    <string name="snooze_duration_20_minutes">20 分钟</string>
-    <string name="snooze_duration_21_minutes">21 分钟</string>
-    <string name="snooze_duration_22_minutes">22 分钟</string>
-    <string name="snooze_duration_23_minutes">23 分钟</string>
-    <string name="snooze_duration_24_minutes">24 分钟</string>
-    <string name="snooze_duration_25_minutes">25 分钟</string>
-    <string name="snooze_duration_26_minutes">26 分钟</string>
-    <string name="snooze_duration_27_minutes">27 分钟</string>
-    <string name="snooze_duration_28_minutes">28 分钟</string>
-    <string name="snooze_duration_29_minutes">29 分钟</string>
-    <string name="snooze_duration_30_minutes">30 分钟</string>
     <string name="week_start_title" msgid="4268917518596832096">一周的第一天</string>
     <string name="week_start_saturday">星期六</string>
     <string name="week_start_sunday">星期日</string>
@@ -321,10 +283,7 @@
     <string name="timer_settings" msgid="7955522143086154795">"定时器"</string>
     <string name="timer_vibrate_title" msgid="7788920024785587518">"定时器振动"</string>
     <string name="timer_paused" msgid="5941160896040771462">"定时器已暂停"</string>
-    <string name="timers_stopped" msgid="3186191253226005149"><xliff:g example="7" id="number">%d</xliff:g> 个定时器已暂停</string>
-    <string name="all_timers_stopped_notif" msgid="883027111895833440">点击查看您的定时器</string>
     <string name="timers_in_use" msgid="5570729467344408506"><xliff:g example="7" id="number">%d</xliff:g> 个定时器</string>
-    <string name="next_timer_notif" msgid="6136454740115613653">下一个定时器：<xliff:g example="2 minutes remaining" id="time_remaining">%s</xliff:g></string>
     <string name="expand_alarm" msgid="7392616528943305020">"展开闹钟"</string>
     <string name="collapse_alarm" msgid="3561772046433483980">收起闹钟</string>
     <string name="alarm_deleted" msgid="6131529309389084785">"闹钟已删除"</string>
@@ -633,9 +592,9 @@
     <string name="analog_widget_configuration_warning">此微件仅可从 Android 12 配置</string>
     <string name="analog_widget_choice_title">选择样式</string>
     <string name="last_tab_used_title">上次使用的标签页‌</string>
-    <string name="timer_button_time_warning_box_title">输入的值不正确</string>
+    <string name="timer_time_warning_box_title">输入的值不正确</string>
     <string name="settings_tab_to_display">打开应用时显示的标签页‌</string>
-    <string name="timer_button_time_minutes_warning_box_text">请输入介于 0 和 60 分钟之间的值</string>
+    <string name="timer_button_time_minutes_warning_box_text">请输入 0 到 60 分钟之间的值</string>
     <string name="settings_language_turkish">土耳其语</string>
     <string name="reset_settings_title">重置设置</string>
     <string name="reset_settings_message">是否确定要重置所有应用设置？\n\n注意：不会重置自定义铃声。</string>
@@ -673,6 +632,23 @@
     <string name="timer_add_custom_time_with_seconds_description">添加 %1$s 分钟 %2$s 秒</string>
     <string name="timer_add_custom_time_with_seconds_for_notification">添加 %1$s 分钟 %2$s 秒</string>
     <string name="label_minutes">分钟</string>
-    <string name="timer_button_time_seconds_warning_box_text">输入 0 到 59 秒之间的值</string>
+    <string name="timer_button_time_seconds_warning_box_text">请输入 0 到 59 秒之间的值</string>
     <string name="label_seconds">秒</string>
+    <string name="timer_seconds_warning_box_text">请输入 0 到 59 秒之间的值</string>
+    <string name="label_hours">小时</string>
+    <string name="timer_time_box_title">新定时器时长</string>
+    <string name="timer_hours_warning_box_text">请输入 0 到 24 小时之间的值</string>
+    <string name="timer_minutes_warning_box_text">请输入 0 到 59 分钟之间的值</string>
+    <string name="auto_routing_to_bluetooth_device_title">启用铃声自动路由到蓝牙设备</string>
+    <string name="timer_creation_view_style_title">定时器创建视图样式</string>
+    <string name="timer_creation_view_style_keypad">键盘</string>
+    <string name="advanced_audio_playback_title">使用高级音频播放</string>
+    <string name="hide_clock_am_pm_pref">隐藏上午/下午文本</string>
+    <string name="advanced_audio_playback_summary">提升蓝牙兼容性，防止重复播放时声音中断 \n\n注意：部分铃声可能会有轻微音频故障</string>
+    <string name="system_media_volume_title">使用系统媒体音量</string>
+    <string name="bluetooth_volume_title">蓝牙设备的闹钟音量</string>
+    <string name="connect_bluetooth_device_title">请连接蓝牙设备以访问此设置</string>
+    <string name="disconnect_bluetooth_device_title">请断开蓝牙设备的连接以访问此设置</string>
+    <string name="system_media_volume_summary">仅在连接蓝牙设备时有效</string>
+    <string name="widget_apply_horizontal_padding_title">将边距应用于微件两侧</string>
 </resources>

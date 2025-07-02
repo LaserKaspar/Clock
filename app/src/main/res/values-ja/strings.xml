@@ -94,44 +94,6 @@
     <string name="auto_silence_20_minutes">20分</string>
     <string name="auto_silence_25_minutes">25分</string>
     <string name="label_off">OFF</string>
-    <string name="crescendo_5_seconds">5秒</string>
-    <string name="crescendo_10_seconds">10秒</string>
-    <string name="crescendo_15_seconds">15秒</string>
-    <string name="crescendo_20_seconds">20秒</string>
-    <string name="crescendo_30_seconds">30秒</string>
-    <string name="crescendo_40_seconds">40秒</string>
-    <string name="crescendo_50_seconds">50秒</string>
-    <string name="crescendo_60_seconds">60秒</string>
-    <string name="snooze_duration_1_minute">1分</string>
-    <string name="snooze_duration_2_minutes">2分</string>
-    <string name="snooze_duration_3_minutes">3分</string>
-    <string name="snooze_duration_4_minutes">4分</string>
-    <string name="snooze_duration_5_minutes">5分</string>
-    <string name="snooze_duration_6_minutes">6分</string>
-    <string name="snooze_duration_7_minutes">7分</string>
-    <string name="snooze_duration_8_minutes">8分</string>
-    <string name="snooze_duration_9_minutes">9分</string>
-    <string name="snooze_duration_10_minutes">10分</string>
-    <string name="snooze_duration_11_minutes">11分</string>
-    <string name="snooze_duration_12_minutes">12分</string>
-    <string name="snooze_duration_13_minutes">13分</string>
-    <string name="snooze_duration_14_minutes">14分</string>
-    <string name="snooze_duration_15_minutes">15分</string>
-    <string name="snooze_duration_16_minutes">16分</string>
-    <string name="snooze_duration_17_minutes">17分</string>
-    <string name="snooze_duration_18_minutes">18分</string>
-    <string name="snooze_duration_19_minutes">19分</string>
-    <string name="snooze_duration_20_minutes">20分</string>
-    <string name="snooze_duration_21_minutes">21分</string>
-    <string name="snooze_duration_22_minutes">22分</string>
-    <string name="snooze_duration_23_minutes">23分</string>
-    <string name="snooze_duration_24_minutes">24分</string>
-    <string name="snooze_duration_25_minutes">25分</string>
-    <string name="snooze_duration_26_minutes">26分</string>
-    <string name="snooze_duration_27_minutes">27分</string>
-    <string name="snooze_duration_28_minutes">28分</string>
-    <string name="snooze_duration_29_minutes">29分</string>
-    <string name="snooze_duration_30_minutes">30分</string>
     <string name="week_start_title" msgid="4268917518596832096">"週の始まり"</string>
     <string name="week_start_saturday">土曜日</string>
     <string name="week_start_sunday">日曜日</string>
@@ -321,10 +283,7 @@
     <string name="timer_settings" msgid="7955522143086154795">"タイマー"</string>
     <string name="timer_vibrate_title" msgid="7788920024785587518">"タイマーのバイブレーション"</string>
     <string name="timer_paused" msgid="5941160896040771462">"タイマーを一時停止しました"</string>
-    <string name="timers_stopped" msgid="3186191253226005149">"<xliff:g id="NUMBER">%d</xliff:g>個のタイマーを一時停止しました"</string>
-    <string name="all_timers_stopped_notif" msgid="883027111895833440">"タイマーを表示するにはタップします"</string>
     <string name="timers_in_use" msgid="5570729467344408506">"<xliff:g id="NUMBER">%d</xliff:g>件のタイマー"</string>
-    <string name="next_timer_notif" msgid="6136454740115613653">"次のタイマー: <xliff:g id="TIME_REMAINING">%s</xliff:g>"</string>
     <string name="expand_alarm" msgid="7392616528943305020">"アラームを展開"</string>
     <string name="collapse_alarm" msgid="3561772046433483980">"アラームを折りたたむ"</string>
     <string name="alarm_deleted" msgid="6131529309389084785">"アラームを削除しました"</string>

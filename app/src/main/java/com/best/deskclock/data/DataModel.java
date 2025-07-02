@@ -442,16 +442,6 @@ public final class DataModel {
     }
 
     /**
-     * Resets all unexpired timers.
-     *
-     * @param eventLabelId the label of the timer event to send; 0 if no event should be sent
-     */
-    public void resetUnexpiredTimers(@StringRes int eventLabelId) {
-        enforceMainLooper();
-        mTimerModel.resetUnexpiredTimers(eventLabelId);
-    }
-
-    /**
      * Resets all missed timers.
      *
      * @param eventLabelId the label of the timer event to send; 0 if no event should be sent
@@ -476,6 +466,15 @@ public final class DataModel {
     public void setTimerLabel(Timer timer, String label) {
         enforceMainLooper();
         mTimerModel.updateTimer(timer.setLabel(label));
+    }
+
+    /**
+     * @param timer the timer to which the new {@code newLength} belongs
+     * @param newLength the new duration to store for the {@code timer}
+     */
+    public void setNewTimerDuration(Timer timer, long newLength) {
+        enforceMainLooper();
+        mTimerModel.updateTimer(timer.setNewDuration(newLength));
     }
 
     /**

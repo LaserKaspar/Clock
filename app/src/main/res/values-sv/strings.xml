@@ -103,44 +103,6 @@
     <string name="auto_silence_20_minutes">20 minuter</string>
     <string name="auto_silence_25_minutes">25 minuter</string>
     <string name="label_off">Av</string>
-    <string name="crescendo_5_seconds">5 sekunder</string>
-    <string name="crescendo_10_seconds">10 sekunder</string>
-    <string name="crescendo_15_seconds">15 sekunder</string>
-    <string name="crescendo_20_seconds">20 sekunder</string>
-    <string name="crescendo_30_seconds">30 sekunder</string>
-    <string name="crescendo_40_seconds">40 sekunder</string>
-    <string name="crescendo_50_seconds">50 sekunder</string>
-    <string name="crescendo_60_seconds">60 sekunder</string>
-    <string name="snooze_duration_1_minute">1 minut</string>
-    <string name="snooze_duration_2_minutes">2 minuter</string>
-    <string name="snooze_duration_3_minutes">3 minuter</string>
-    <string name="snooze_duration_4_minutes">4 minuter</string>
-    <string name="snooze_duration_5_minutes">5 minuter</string>
-    <string name="snooze_duration_6_minutes">6 minuter</string>
-    <string name="snooze_duration_7_minutes">7 minuter</string>
-    <string name="snooze_duration_8_minutes">8 minuter</string>
-    <string name="snooze_duration_9_minutes">9 minuter</string>
-    <string name="snooze_duration_10_minutes">10 minuter</string>
-    <string name="snooze_duration_11_minutes">11 minuter</string>
-    <string name="snooze_duration_12_minutes">12 minuter</string>
-    <string name="snooze_duration_13_minutes">13 minuter</string>
-    <string name="snooze_duration_14_minutes">14 minuter</string>
-    <string name="snooze_duration_15_minutes">15 minuter</string>
-    <string name="snooze_duration_16_minutes">16 minuter</string>
-    <string name="snooze_duration_17_minutes">17 minuter</string>
-    <string name="snooze_duration_18_minutes">18 minuter</string>
-    <string name="snooze_duration_19_minutes">19 minuter</string>
-    <string name="snooze_duration_20_minutes">20 minuter</string>
-    <string name="snooze_duration_21_minutes">21 minuter</string>
-    <string name="snooze_duration_22_minutes">22 minuter</string>
-    <string name="snooze_duration_23_minutes">23 minuter</string>
-    <string name="snooze_duration_24_minutes">24 minuter</string>
-    <string name="snooze_duration_25_minutes">25 minuter</string>
-    <string name="snooze_duration_26_minutes">26 minuter</string>
-    <string name="snooze_duration_27_minutes">27 minuter</string>
-    <string name="snooze_duration_28_minutes">28 minuter</string>
-    <string name="snooze_duration_29_minutes">29 minuter</string>
-    <string name="snooze_duration_30_minutes">30 minuter</string>
     <string name="week_start_title" msgid="4268917518596832096">"Börja veckan med"</string>
     <string name="week_start_saturday">lördag</string>
     <string name="week_start_sunday">söndag</string>
@@ -330,10 +292,7 @@
     <string name="timer_settings" msgid="7955522143086154795">"Timer"</string>
     <string name="timer_vibrate_title" msgid="7788920024785587518">"Vibration för timer"</string>
     <string name="timer_paused" msgid="5941160896040771462">"Timern har pausats"</string>
-    <string name="timers_stopped" msgid="3186191253226005149">"<xliff:g id="NUMBER">%d</xliff:g> timer har pausats"</string>
-    <string name="all_timers_stopped_notif" msgid="883027111895833440">"Tryck här för att visa timer"</string>
     <string name="timers_in_use" msgid="5570729467344408506">"<xliff:g id="NUMBER">%d</xliff:g> timer"</string>
-    <string name="next_timer_notif" msgid="6136454740115613653">"Nästa timer: <xliff:g id="TIME_REMAINING">%s</xliff:g>"</string>
     <string name="expand_alarm" msgid="7392616528943305020">"Expandera alarm"</string>
     <string name="collapse_alarm" msgid="3561772046433483980">"Komprimera alarm"</string>
     <string name="alarm_deleted" msgid="6131529309389084785">"Alarmet har tagits bort"</string>

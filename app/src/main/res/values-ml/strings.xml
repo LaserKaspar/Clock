@@ -103,44 +103,6 @@
     <string name="auto_silence_20_minutes">20 മിനിറ്റ്</string>
     <string name="auto_silence_25_minutes">25 മിനിറ്റ്</string>
     <string name="label_off">ഓഫ് ചെയ്യുക</string>
-    <string name="crescendo_5_seconds">5 സെക്കൻഡ്</string>
-    <string name="crescendo_10_seconds">10 സെക്കൻഡ്</string>
-    <string name="crescendo_15_seconds">15 സെക്കൻഡ്</string>
-    <string name="crescendo_20_seconds">20 സെക്കൻഡ്</string>
-    <string name="crescendo_30_seconds">30 സെക്കൻഡ്</string>
-    <string name="crescendo_40_seconds">40 സെക്കൻഡ്</string>
-    <string name="crescendo_50_seconds">50 സെക്കൻഡ്</string>
-    <string name="crescendo_60_seconds">60 സെക്കൻഡ്</string>
-    <string name="snooze_duration_1_minute">1 മിനിറ്റ്</string>
-    <string name="snooze_duration_2_minutes">2 മിനിറ്റ്</string>
-    <string name="snooze_duration_3_minutes">3 മിനിറ്റ്</string>
-    <string name="snooze_duration_4_minutes">4 മിനിറ്റ്</string>
-    <string name="snooze_duration_5_minutes">5 മിനിറ്റ്</string>
-    <string name="snooze_duration_6_minutes">6 മിനിറ്റ്</string>
-    <string name="snooze_duration_7_minutes">7 മിനിറ്റ്</string>
-    <string name="snooze_duration_8_minutes">8 മിനിറ്റ്</string>
-    <string name="snooze_duration_9_minutes">9 മിനിറ്റ്</string>
-    <string name="snooze_duration_10_minutes">10 മിനിറ്റ്</string>
-    <string name="snooze_duration_11_minutes">11 മിനിറ്റ്</string>
-    <string name="snooze_duration_12_minutes">12 മിനിറ്റ്</string>
-    <string name="snooze_duration_13_minutes">13 മിനിറ്റ്</string>
-    <string name="snooze_duration_14_minutes">14 മിനിറ്റ്</string>
-    <string name="snooze_duration_15_minutes">15 മിനിറ്റ്</string>
-    <string name="snooze_duration_16_minutes">16 മിനിറ്റ്</string>
-    <string name="snooze_duration_17_minutes">17 മിനിറ്റ്</string>
-    <string name="snooze_duration_18_minutes">18 മിനിറ്റ്</string>
-    <string name="snooze_duration_19_minutes">19 മിനിറ്റ്</string>
-    <string name="snooze_duration_20_minutes">20 മിനിറ്റ്</string>
-    <string name="snooze_duration_21_minutes">21 മിനിറ്റ്</string>
-    <string name="snooze_duration_22_minutes">22 മിനിറ്റ്</string>
-    <string name="snooze_duration_23_minutes">23 മിനിറ്റ്</string>
-    <string name="snooze_duration_24_minutes">24 മിനിറ്റ്</string>
-    <string name="snooze_duration_25_minutes">25 മിനിറ്റ്</string>
-    <string name="snooze_duration_26_minutes">26 മിനിറ്റ്</string>
-    <string name="snooze_duration_27_minutes">27 മിനിറ്റ്</string>
-    <string name="snooze_duration_28_minutes">28 മിനിറ്റ്</string>
-    <string name="snooze_duration_29_minutes">29 മിനിറ്റ്</string>
-    <string name="snooze_duration_30_minutes">30 മിനിറ്റ്</string>
     <string name="week_start_title" msgid="4268917518596832096">"തുടങ്ങേണ്ട ദിവസം"</string>
     <string name="week_start_saturday">ശനി</string>
     <string name="week_start_sunday">ഞായർ</string>
@@ -329,10 +291,7 @@
     <string name="timer_settings" msgid="7955522143086154795">"ടൈമറുകൾ"</string>
     <string name="timer_vibrate_title" msgid="7788920024785587518">"ടൈമർ വൈബ്രേഷൻ"</string>
     <string name="timer_paused" msgid="5941160896040771462">"ടൈമർ തൽക്കാലം നിർത്തി"</string>
-    <string name="timers_stopped" msgid="3186191253226005149">"<xliff:g id="NUMBER">%d</xliff:g> ടൈമറുകൾ തൽക്കാലം നിർത്തി"</string>
-    <string name="all_timers_stopped_notif" msgid="883027111895833440">"നിങ്ങളുടെ ടൈമറുകൾ കാണാൻ ടാപ്പുചെയ്യുക"</string>
     <string name="timers_in_use" msgid="5570729467344408506">"<xliff:g id="NUMBER">%d</xliff:g> ടൈമറുകൾ"</string>
-    <string name="next_timer_notif" msgid="6136454740115613653">"അടുത്ത ടൈമർ: <xliff:g id="TIME_REMAINING">%s</xliff:g>"</string>
     <string name="expand_alarm" msgid="7392616528943305020">"അലാറം വിപുലീകരിക്കുക"</string>
     <string name="collapse_alarm" msgid="3561772046433483980">"അലാറം ചുരുക്കുക"</string>
     <string name="alarm_deleted" msgid="6131529309389084785">"അലാറം ഇല്ലാതാക്കി"</string>

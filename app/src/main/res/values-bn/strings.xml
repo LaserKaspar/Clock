@@ -103,44 +103,6 @@
     <string name="auto_silence_20_minutes">২০ মিনিট</string>
     <string name="auto_silence_25_minutes">২৫ মিনিট</string>
     <string name="label_off">বন্ধ করুন</string>
-    <string name="crescendo_5_seconds">৫ সেকেন্ড</string>
-    <string name="crescendo_10_seconds">১০ সেকেন্ড</string>
-    <string name="crescendo_15_seconds">১৫ সেকেন্ড</string>
-    <string name="crescendo_20_seconds">২০ সেকেন্ড</string>
-    <string name="crescendo_30_seconds">৩০ সেকেন্ড</string>
-    <string name="crescendo_40_seconds">৪০ সেকেন্ড</string>
-    <string name="crescendo_50_seconds">৫০ সেকেন্ড</string>
-    <string name="crescendo_60_seconds">৬০ সেকেন্ড</string>
-    <string name="snooze_duration_1_minute">"১ মিনিট"</string>
-    <string name="snooze_duration_2_minutes">"২ মিনিট"</string>
-    <string name="snooze_duration_3_minutes">"৩ মিনিট"</string>
-    <string name="snooze_duration_4_minutes">"৪ মিনিট"</string>
-    <string name="snooze_duration_5_minutes">"৫ মিনিট"</string>
-    <string name="snooze_duration_6_minutes">"৬ মিনিট"</string>
-    <string name="snooze_duration_7_minutes">"৭ মিনিট"</string>
-    <string name="snooze_duration_8_minutes">"৮ মিনিট"</string>
-    <string name="snooze_duration_9_minutes">"৯ মিনিট"</string>
-    <string name="snooze_duration_10_minutes">"১০ মিনিট"</string>
-    <string name="snooze_duration_11_minutes">"১১ মিনিট"</string>
-    <string name="snooze_duration_12_minutes">"১২ মিনিট"</string>
-    <string name="snooze_duration_13_minutes">"১৩ মিনিট"</string>
-    <string name="snooze_duration_14_minutes">"১৪ মিনিট"</string>
-    <string name="snooze_duration_15_minutes">"১৫ মিনিট"</string>
-    <string name="snooze_duration_16_minutes">"১৬ মিনিট"</string>
-    <string name="snooze_duration_17_minutes">"১৭ মিনিট"</string>
-    <string name="snooze_duration_18_minutes">"১৮ মিনিট"</string>
-    <string name="snooze_duration_19_minutes">"১৯ মিনিট"</string>
-    <string name="snooze_duration_20_minutes">"২০ মিনিট"</string>
-    <string name="snooze_duration_21_minutes">"২১ মিনিট"</string>
-    <string name="snooze_duration_22_minutes">"২২ মিনিট"</string>
-    <string name="snooze_duration_23_minutes">"২৩ মিনিট"</string>
-    <string name="snooze_duration_24_minutes">"২৪ মিনিট"</string>
-    <string name="snooze_duration_25_minutes">"২৫ মিনিট"</string>
-    <string name="snooze_duration_26_minutes">"২৬ মিনিট"</string>
-    <string name="snooze_duration_27_minutes">"২৭ মিনিট"</string>
-    <string name="snooze_duration_28_minutes">"২৮ মিনিট"</string>
-    <string name="snooze_duration_29_minutes">"২৯ মিনিট"</string>
-    <string name="snooze_duration_30_minutes">"৩০ মিনিট"</string>
     <string name="week_start_title" msgid="4268917518596832096">"এতে সপ্তাহ শুরু হয়"</string>
     <string name="week_start_saturday">শনিবার</string>
     <string name="week_start_sunday">রবিবার</string>
@@ -329,10 +291,7 @@
     <string name="timer_settings" msgid="7955522143086154795">"টাইমারগুলো"</string>
     <string name="timer_vibrate_title" msgid="7788920024785587518">"টাইমারের স্পন্দন"</string>
     <string name="timer_paused" msgid="5941160896040771462">"টাইমারে বিরাম দেওয়া হয়েছে"</string>
-    <string name="timers_stopped" msgid="3186191253226005149">"<xliff:g id="NUMBER">%d</xliff:g>টি টাইমারে বিরাম দেওয়া হয়েছে"</string>
-    <string name="all_timers_stopped_notif" msgid="883027111895833440">"আপনার টাইমারগুলি দেখতে আলতো চাপ দিন"</string>
     <string name="timers_in_use" msgid="5570729467344408506">"<xliff:g id="NUMBER">%d</xliff:g> টি টাইমার"</string>
-    <string name="next_timer_notif" msgid="6136454740115613653">"পরবর্তী টাইমার: <xliff:g id="TIME_REMAINING">%s</xliff:g>"</string>
     <string name="expand_alarm" msgid="7392616528943305020">"অ্যালার্ম প্রসারিত করুন"</string>
     <string name="collapse_alarm" msgid="3561772046433483980">"অ্যালার্ম সঙ্কুচিত করুন"</string>
     <string name="alarm_deleted" msgid="6131529309389084785">"অ্যালার্ম মুছে ফেলা হয়েছে"</string>

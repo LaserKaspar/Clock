@@ -41,14 +41,36 @@ public class TimerViewHolder extends RecyclerView.ViewHolder {
         mTimerItem = (TimerItem) view;
         mTimerClickHandler = timerClickHandler;
 
-        view.findViewById(R.id.reset).setOnClickListener(v -> {
+        View timerLabel = view.findViewById(R.id.timer_label);
+        View resetButton = view.findViewById(R.id.reset);
+        View timerTotalDuration = view.findViewById(R.id.timer_total_duration);
+        View timerEditNewDurationButton = view.findViewById(R.id.timer_edit_new_duration_button);
+        View addTimeButton = view.findViewById(R.id.timer_add_time_button);
+        View circleContainer = view.findViewById(R.id.circle_container);
+        View timerTimeText = view.findViewById(R.id.timer_time_text);
+        View playPauseButton = view.findViewById(R.id.play_pause);
+        View deleteButton = view.findViewById(R.id.delete_timer);
+
+        View.OnClickListener playPauseListener = v -> {
+            Utils.setVibrationTime(context, 50);
+            if (getTimer().isPaused() || getTimer().isReset()) {
+                DataModel.getDataModel().startTimer(getTimer());
+            } else if (getTimer().isRunning()) {
+                DataModel.getDataModel().pauseTimer(getTimer());
+            } else if (getTimer().isExpired() || getTimer().isMissed()) {
+                DataModel.getDataModel().resetOrDeleteExpiredTimers(R.string.label_deskclock);
+            }
+        };
+
+        timerLabel.setOnClickListener(v -> mTimerClickHandler.onEditLabelClicked(getTimer()));
+
+        resetButton.setOnClickListener(v -> {
             DataModel.getDataModel().resetOrDeleteTimer(getTimer(), R.string.label_deskclock);
             Utils.setVibrationTime(context, 10);
         });
 
-        view.findViewById(R.id.timer_add_time_button).setOnClickListener(v -> {
-            final Timer timer = getTimer();
-            DataModel.getDataModel().addCustomTimeToTimer(timer);
+        addTimeButton.setOnClickListener(v -> {
+            DataModel.getDataModel().addCustomTimeToTimer(getTimer());
             Utils.setVibrationTime(context, 10);
             Events.sendTimerEvent(R.string.action_add_custom_time_to_timer, R.string.label_deskclock);
 
@@ -61,37 +83,45 @@ public class TimerViewHolder extends RecyclerView.ViewHolder {
             }
         });
 
-        view.findViewById(R.id.timer_add_time_button).setOnLongClickListener(v -> {
+        addTimeButton.setOnLongClickListener(v -> {
             mTimerClickHandler.onEditAddTimeButtonLongClicked(getTimer());
             return true;
         });
 
-        view.findViewById(R.id.timer_label).setOnClickListener(v -> mTimerClickHandler.onEditLabelClicked(getTimer()));
+        // Only possible for portrait mode phones with multiple timers
+        if (timerTotalDuration != null) {
+            timerTotalDuration.setOnClickListener(v -> {
+                if (!getTimer().isReset()) {
+                    return;
+                }
 
-        View.OnClickListener mPlayPauseListener = v -> {
-            Utils.setVibrationTime(context, 50);
-            final Timer clickedTimer = getTimer();
-            if (clickedTimer.isPaused() || clickedTimer.isReset()) {
-                DataModel.getDataModel().startTimer(clickedTimer);
-            } else if (clickedTimer.isRunning()) {
-                DataModel.getDataModel().pauseTimer(clickedTimer);
-            } else if (clickedTimer.isExpired() || clickedTimer.isMissed()) {
-                DataModel.getDataModel().resetOrDeleteExpiredTimers(R.string.label_deskclock);
-            }
-        };
-
-        // If we click on the circular container when the phones (only) are in landscape mode,
-        // indicating a title for the timers is not possible so in this case we click on the time text.
-        if (!ThemeUtils.isTablet() && ThemeUtils.isLandscape()) {
-            view.findViewById(R.id.timer_time_text).setOnClickListener(mPlayPauseListener);
-        } else {
-            view.findViewById(R.id.circle_container).setOnClickListener(mPlayPauseListener);
-            view.findViewById(R.id.circle_container).setOnTouchListener(new Utils.CircleTouchListener());
+                mTimerClickHandler.onDurationClicked(getTimer());
+            });
         }
 
-        view.findViewById(R.id.play_pause).setOnClickListener(mPlayPauseListener);
+        // Only possible for tablets, landscape phones or when there is only one timer
+        if (timerEditNewDurationButton != null) {
+            timerEditNewDurationButton.setOnClickListener(v -> {
+                if (!getTimer().isReset()) {
+                    return;
+                }
 
-        view.findViewById(R.id.delete_timer).setOnClickListener(v -> {
+                mTimerClickHandler.onDurationClicked(getTimer());
+            });
+        }
+
+        if (circleContainer != null) {
+            circleContainer.setOnClickListener(playPauseListener);
+            circleContainer.setOnTouchListener(new Utils.CircleTouchListener());
+        }
+
+        if (!ThemeUtils.isTablet() && ThemeUtils.isLandscape()) {
+            timerTimeText.setOnClickListener(playPauseListener);
+        }
+
+        playPauseButton.setOnClickListener(playPauseListener);
+
+        deleteButton.setOnClickListener(v -> {
             Utils.setVibrationTime(context, 10);
 
             if (SettingsDAO.isWarningDisplayedBeforeDeletingTimer(getDefaultSharedPreferences(context))) {

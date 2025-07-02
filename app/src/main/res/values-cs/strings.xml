@@ -121,44 +121,6 @@
     <string name="auto_silence_20_minutes">20 minut</string>
     <string name="auto_silence_25_minutes">25 minut</string>
     <string name="label_off">Vypnuto</string>
-    <string name="crescendo_5_seconds">5 sekund</string>
-    <string name="crescendo_10_seconds">10 sekund</string>
-    <string name="crescendo_15_seconds">15 sekund</string>
-    <string name="crescendo_20_seconds">20 sekund</string>
-    <string name="crescendo_30_seconds">30 sekund</string>
-    <string name="crescendo_40_seconds">40 sekund</string>
-    <string name="crescendo_50_seconds">50 sekund</string>
-    <string name="crescendo_60_seconds">60 sekund</string>
-    <string name="snooze_duration_1_minute">1 minuta</string>
-    <string name="snooze_duration_2_minutes">2 minuty</string>
-    <string name="snooze_duration_3_minutes">3 minuty</string>
-    <string name="snooze_duration_4_minutes">4 minuty</string>
-    <string name="snooze_duration_5_minutes">5 minut</string>
-    <string name="snooze_duration_6_minutes">6 minut</string>
-    <string name="snooze_duration_7_minutes">7 minut</string>
-    <string name="snooze_duration_8_minutes">8 minut</string>
-    <string name="snooze_duration_9_minutes">9 minut</string>
-    <string name="snooze_duration_10_minutes">10 minut</string>
-    <string name="snooze_duration_11_minutes">11 minut</string>
-    <string name="snooze_duration_12_minutes">12 minut</string>
-    <string name="snooze_duration_13_minutes">13 minut</string>
-    <string name="snooze_duration_14_minutes">14 minut</string>
-    <string name="snooze_duration_15_minutes">15 minut</string>
-    <string name="snooze_duration_16_minutes">16 minut</string>
-    <string name="snooze_duration_17_minutes">17 minut</string>
-    <string name="snooze_duration_18_minutes">18 minut</string>
-    <string name="snooze_duration_19_minutes">19 minut</string>
-    <string name="snooze_duration_20_minutes">20 minut</string>
-    <string name="snooze_duration_21_minutes">21 minut</string>
-    <string name="snooze_duration_22_minutes">22 minut</string>
-    <string name="snooze_duration_23_minutes">23 minut</string>
-    <string name="snooze_duration_24_minutes">24 minut</string>
-    <string name="snooze_duration_25_minutes">25 minut</string>
-    <string name="snooze_duration_26_minutes">26 minut</string>
-    <string name="snooze_duration_27_minutes">27 minut</string>
-    <string name="snooze_duration_28_minutes">28 minut</string>
-    <string name="snooze_duration_29_minutes">29 minut</string>
-    <string name="snooze_duration_30_minutes">30 minut</string>
     <string name="week_start_title" msgid="4268917518596832096">"Počáteční den týdne"</string>
     <string name="week_start_saturday">sobota</string>
     <string name="week_start_sunday">neděle</string>
@@ -348,10 +310,7 @@
     <string name="timer_settings" msgid="7955522143086154795">"Časovače"</string>
     <string name="timer_vibrate_title" msgid="7788920024785587518">"Vibrace časovače"</string>
     <string name="timer_paused" msgid="5941160896040771462">"Časovač pozastaven"</string>
-    <string name="timers_stopped" msgid="3186191253226005149">"Pozastavené časovače: <xliff:g id="NUMBER">%d</xliff:g>"</string>
-    <string name="all_timers_stopped_notif" msgid="883027111895833440">"Klepnutím zobrazíte časovače"</string>
     <string name="timers_in_use" msgid="5570729467344408506">"Časovače (<xliff:g id="NUMBER">%d</xliff:g>)"</string>
-    <string name="next_timer_notif" msgid="6136454740115613653">"Další časovač: <xliff:g id="TIME_REMAINING">%s</xliff:g>"</string>
     <string name="expand_alarm" msgid="7392616528943305020">"Rozbalit budík"</string>
     <string name="collapse_alarm" msgid="3561772046433483980">"Sbalit budík"</string>
     <string name="alarm_deleted" msgid="6131529309389084785">"Budík byl smazán"</string>
@@ -445,7 +404,7 @@
     <string name="first_launch_important_info_message_for_SDK34">• &lt;b&gt;OZNÁMENÍ NA CELÉ OBRAZOVCE;&lt;/b&gt; &lt;br&gt; &lt;br&gt;</string>
     <string name="widgets_settings">Widgety</string>
     <string name="settings_language_turkish">Turečtina</string>
-    <string name="timer_button_time_warning_box_title">Zadána neplatná hodnota</string>
+    <string name="timer_time_warning_box_title">Zadána neplatná hodnota</string>
     <string name="contributors">Přispěvatelé</string>
     <string name="about_github_link">Zobrazit na GitHubu</string>
     <string name="license">Licence open source</string>
@@ -701,4 +660,21 @@
     <string name="label_minutes">Minuty</string>
     <string name="label_seconds">Sekundy</string>
     <string name="timer_add_custom_time_with_seconds_description">Přidat %1$s minutu %2$s sekund</string>
+    <string name="timer_time_box_title">Nové trvání časovače</string>
+    <string name="timer_hours_warning_box_text">Zadejte hodnotu mezi 0 a 24 hodinami</string>
+    <string name="timer_minutes_warning_box_text">Zadejte hodnotu mezi 0 a 59 minutami</string>
+    <string name="timer_seconds_warning_box_text">Zadejte hodnotu mezi 0 a 59 sekundami</string>
+    <string name="label_hours">Hodiny</string>
+    <string name="auto_routing_to_bluetooth_device_title">Povolit automatické směrování vyzvánění do zařízení Bluetooth</string>
+    <string name="timer_creation_view_style_title">Styl zobrazení tvorby časovače</string>
+    <string name="timer_creation_view_style_keypad">Klávesnice</string>
+    <string name="advanced_audio_playback_title">Použít pokročilé přehrávání zvuku</string>
+    <string name="hide_clock_am_pm_pref">Skrýt text dop./odp.</string>
+    <string name="advanced_audio_playback_summary">Zlepšuje kompatibilitu Bluetooth a zabraňuje přerušování zvuku během opakování. \n\nUpozornění: některá vyzvánění mohou mít drobné zvukové chyby</string>
+    <string name="widget_apply_horizontal_padding_title">Použít odsazení na strany widgetů</string>
+    <string name="system_media_volume_title">Použít systémovou hlasitost médií</string>
+    <string name="system_media_volume_summary">Funguje pouze při připojeném zařízení Bluetooth</string>
+    <string name="bluetooth_volume_title">Hlasitost budíku pro zařízení Bluetooth</string>
+    <string name="connect_bluetooth_device_title">Připojte zařízení Bluetooth pro přístup k tomuto nastavení</string>
+    <string name="disconnect_bluetooth_device_title">Odpojte zařízení Bluetooth pro přístup k tomuto nastavení</string>
 </resources>

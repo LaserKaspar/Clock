@@ -485,6 +485,14 @@ public final class SettingsDAO {
     }
 
     /**
+     * @return the timer creation view style.
+     */
+    public static String getTimerCreationViewStyle(SharedPreferences prefs) {
+        // Default value must match the one in res/xml/settings_timer.xml
+        return prefs.getString(KEY_TIMER_CREATION_VIEW_STYLE, DEFAULT_TIMER_CREATION_VIEW_STYLE);
+    }
+
+    /**
      * @return {@code true} if the timer background must be transparent. {@code false} otherwise.
      */
     public static boolean isTimerBackgroundTransparent(SharedPreferences prefs) {
@@ -531,22 +539,55 @@ public final class SettingsDAO {
 
     /**
      * @return the duration, in milliseconds, of the crescendo to apply to alarm ringtone playback;
-     * {@code 0} implies no crescendo should be applied
+     * {@code 0} implies no crescendo should be applied.
      */
-    public static long getAlarmCrescendoDuration(SharedPreferences prefs) {
+    public static long getAlarmVolumeCrescendoDuration(SharedPreferences prefs) {
+        return prefs.getInt(KEY_ALARM_VOLUME_CRESCENDO_DURATION,
+                DEFAULT_ALARM_VOLUME_CRESCENDO_DURATION) * DateUtils.SECOND_IN_MILLIS;
+    }
+
+    /**
+     * @return {@code true} if advanced audio playback is enabled for the ringtone.
+     * {@code false} otherwise.
+     */
+    public static boolean isAdvancedAudioPlaybackEnabled(SharedPreferences prefs) {
         // Default value must match the one in res/xml/settings_alarm.xml
-        final String crescendoSeconds = prefs.getString(KEY_ALARM_CRESCENDO_DURATION, DEFAULT_ALARM_CRESCENDO_DURATION);
-        return Integer.parseInt(crescendoSeconds) * DateUtils.SECOND_IN_MILLIS;
+        return prefs.getBoolean(KEY_ADVANCED_AUDIO_PLAYBACK, DEFAULT_ADVANCED_AUDIO_PLAYBACK);
+    }
+
+    /**
+     * @return {@code true} if the ringtone should be automatically routed to Bluetooth devices.
+     * {@code false} otherwise.
+     */
+    public static boolean isAutoRoutingToBluetoothDeviceEnabled(SharedPreferences prefs) {
+        // Default value must match the one in res/xml/settings_alarm.xml
+        return prefs.getBoolean(KEY_AUTO_ROUTING_TO_BLUETOOTH_DEVICE, DEFAULT_AUTO_ROUTING_TO_BLUETOOTH_DEVICE);
+    }
+
+    /**
+     * @return {@code true} if a custom media volume should be applied instead of the
+     * system media volume. {@code false} otherwise.
+     */
+    public static boolean shouldUseCustomMediaVolume(SharedPreferences prefs) {
+        // Default value must match the one in res/xml/settings_alarm.xml
+        return !prefs.getBoolean(KEY_SYSTEM_MEDIA_VOLUME, DEFAULT_SYSTEM_MEDIA_VOLUME);
+    }
+
+    /**
+     * @return the volume applied to the ringtone when a Bluetooth device is connected.
+     */
+    public static int getBluetoothVolumeValue(SharedPreferences prefs) {
+        // Default value must match the one in res/xml/settings_alarm.xml
+        return prefs.getInt(KEY_BLUETOOTH_VOLUME, DEFAULT_BLUETOOTH_VOLUME);
     }
 
     /**
      * @return the duration, in milliseconds, of the crescendo to apply to timer ringtone playback;
-     * {@code 0} implies no crescendo should be applied
+     * {@code 0} implies no crescendo should be applied.
      */
-    public static long getTimerCrescendoDuration(SharedPreferences prefs) {
-        // Default value must match the one in res/xml/settings_timer.xml
-        final String crescendoSeconds = prefs.getString(KEY_TIMER_CRESCENDO_DURATION, DEFAULT_TIMER_CRESCENDO_DURATION);
-        return Integer.parseInt(crescendoSeconds) * DateUtils.SECOND_IN_MILLIS;
+    public static long getTimerVolumeCrescendoDuration(SharedPreferences prefs) {
+        return prefs.getInt(KEY_TIMER_VOLUME_CRESCENDO_DURATION,
+                DEFAULT_TIMER_VOLUME_CRESCENDO_DURATION) * DateUtils.SECOND_IN_MILLIS;
     }
 
     /**
@@ -632,9 +673,7 @@ public final class SettingsDAO {
      * @return the number of minutes an alarm will remain snoozed before it rings again
      */
     public static int getSnoozeLength(SharedPreferences prefs) {
-        // Default value must match the one in res/xml/settings_alarm.xml
-        final String string = prefs.getString(KEY_ALARM_SNOOZE_DURATION, DEFAULT_ALARM_SNOOZE_DURATION);
-        return Integer.parseInt(string);
+        return prefs.getInt(KEY_ALARM_SNOOZE_DURATION, DEFAULT_ALARM_SNOOZE_DURATION);
     }
 
     /**

@@ -220,14 +220,15 @@ public class MaterialYouDigitalAppWidgetProvider extends AppWidgetProvider {
             rv.setViewVisibility(R.id.clock, VISIBLE);
             rv.setViewVisibility(R.id.clockForCustomColor, GONE);
             rv.setCharSequence(R.id.clock, "setFormat12Hour", ClockUtils.get12ModeFormat(
-                    context, 0.4f, WidgetDAO.areSecondsDisplayedOnMaterialYouDigitalWidget(prefs)));
+                    context, WidgetUtils.getAmPmRatio(true, prefs),
+                    WidgetDAO.areSecondsDisplayedOnMaterialYouDigitalWidget(prefs)));
             rv.setCharSequence(R.id.clock, "setFormat24Hour", ClockUtils.get24ModeFormat(
                     context, WidgetDAO.areSecondsDisplayedOnMaterialYouDigitalWidget(prefs)));
         } else {
             rv.setViewVisibility(R.id.clock, GONE);
             rv.setViewVisibility(R.id.clockForCustomColor, VISIBLE);
             rv.setCharSequence(R.id.clockForCustomColor, "setFormat12Hour",
-                    ClockUtils.get12ModeFormat(context, 0.4f,
+                    ClockUtils.get12ModeFormat(context, WidgetUtils.getAmPmRatio(true, prefs),
                             WidgetDAO.areSecondsDisplayedOnMaterialYouDigitalWidget(prefs)));
             rv.setCharSequence(R.id.clockForCustomColor, "setFormat24Hour",
                     ClockUtils.get24ModeFormat(context,
@@ -286,6 +287,10 @@ public class MaterialYouDigitalAppWidgetProvider extends AppWidgetProvider {
         final LayoutInflater inflater = LayoutInflater.from(context);
         @SuppressLint("InflateParams") final View sizer =
                 inflater.inflate(R.layout.material_you_digital_widget_sizer, null);
+
+        int horizontalPadding = ThemeUtils.convertDpToPixels(
+                WidgetDAO.isMaterialYouDigitalWidgetHorizontalPaddingApplied(prefs) ? 20 : 0, context);
+        sizer.setPadding(horizontalPadding, 0, horizontalPadding, 0);
 
         final TextClock clock = sizer.findViewById(R.id.clock);
         final TextClock clockForCustomColor = sizer.findViewById(R.id.clockForCustomColor);
@@ -399,14 +404,14 @@ public class MaterialYouDigitalAppWidgetProvider extends AppWidgetProvider {
         // Adjust the font sizes.
         measuredSizes.setClockFontSizePx(clockFontSize);
 
-        clock.setText(WidgetUtils.getLongestTimeString(clock));
+        clock.setText(WidgetUtils.getLongestTimeString(clock, true));
         clock.setTextSize(COMPLEX_UNIT_PX, measuredSizes.mClockFontSizePx);
         date.setTextSize(COMPLEX_UNIT_PX, measuredSizes.mFontSizePx);
         nextAlarm.setTextSize(COMPLEX_UNIT_PX, measuredSizes.mFontSizePx);
         nextAlarmIcon.setTextSize(COMPLEX_UNIT_PX, measuredSizes.mIconFontSizePx);
         nextAlarmIcon.setPadding(measuredSizes.mIconPaddingPx, 0, measuredSizes.mIconPaddingPx, 0);
 
-        clockForCustomColor.setText(WidgetUtils.getLongestTimeString(clockForCustomColor));
+        clockForCustomColor.setText(WidgetUtils.getLongestTimeString(clockForCustomColor, true));
         clockForCustomColor.setTextSize(COMPLEX_UNIT_PX, measuredSizes.mClockFontSizePx);
         dateForCustomColor.setTextSize(COMPLEX_UNIT_PX, measuredSizes.mFontSizePx);
         nextAlarmForCustomColor.setTextSize(COMPLEX_UNIT_PX, measuredSizes.mFontSizePx);

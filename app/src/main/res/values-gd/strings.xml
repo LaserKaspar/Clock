@@ -85,44 +85,6 @@
     <string name="auto_silence_20_minutes">20 mionaidean</string>
     <string name="auto_silence_25_minutes">25 mionaidean</string>
     <string name="label_off">Dheth</string>
-    <string name="crescendo_5_seconds">5 seconds</string>
-    <string name="crescendo_10_seconds">10 seconds</string>
-    <string name="crescendo_15_seconds">15 seconds</string>
-    <string name="crescendo_20_seconds">20 seconds</string>
-    <string name="crescendo_30_seconds">30 seconds</string>
-    <string name="crescendo_40_seconds">40 seconds</string>
-    <string name="crescendo_50_seconds">50 seconds</string>
-    <string name="crescendo_60_seconds">60 seconds</string>
-    <string name="snooze_duration_1_minute">1 mionaid</string>
-    <string name="snooze_duration_2_minutes">2 mionaidean</string>
-    <string name="snooze_duration_3_minutes">3 mionaidean</string>
-    <string name="snooze_duration_4_minutes">4 mionaidean</string>
-    <string name="snooze_duration_5_minutes">5 mionaidean</string>
-    <string name="snooze_duration_6_minutes">6 mionaidean</string>
-    <string name="snooze_duration_7_minutes">7 mionaidean</string>
-    <string name="snooze_duration_8_minutes">8 mionaidean</string>
-    <string name="snooze_duration_9_minutes">9 mionaidean</string>
-    <string name="snooze_duration_10_minutes">10 mionaidean</string>
-    <string name="snooze_duration_11_minutes">11 mionaidean</string>
-    <string name="snooze_duration_12_minutes">12 mionaidean</string>
-    <string name="snooze_duration_13_minutes">13 mionaidean</string>
-    <string name="snooze_duration_14_minutes">14 mionaidean</string>
-    <string name="snooze_duration_15_minutes">15 mionaidean</string>
-    <string name="snooze_duration_16_minutes">16 mionaidean</string>
-    <string name="snooze_duration_17_minutes">17 mionaidean</string>
-    <string name="snooze_duration_18_minutes">18 mionaidean</string>
-    <string name="snooze_duration_19_minutes">19 mionaidean</string>
-    <string name="snooze_duration_20_minutes">20 mionaidean</string>
-    <string name="snooze_duration_21_minutes">21 mionaidean</string>
-    <string name="snooze_duration_22_minutes">22 mionaidean</string>
-    <string name="snooze_duration_23_minutes">23 mionaidean</string>
-    <string name="snooze_duration_24_minutes">24 mionaidean</string>
-    <string name="snooze_duration_25_minutes">25 mionaidean</string>
-    <string name="snooze_duration_26_minutes">26 mionaidean</string>
-    <string name="snooze_duration_27_minutes">27 mionaidean</string>
-    <string name="snooze_duration_28_minutes">28 mionaidean</string>
-    <string name="snooze_duration_29_minutes">29 mionaidean</string>
-    <string name="snooze_duration_30_minutes">30 mionaidean</string>
     <string name="week_start_title">Tòisich an t-seachdain air</string>
     <string name="week_start_saturday">DiSathairne</string>
     <string name="week_start_sunday">DiDòmhnaich</string>
@@ -288,9 +250,7 @@
     <string name="description_direction_both">Grad-shlaighd gun taobh chlì ’ga chur ’na dhùsal no gun taobh deas ’ga leigeil seachad</string>
     <string name="timer_settings">Tìmearan</string>
     <string name="timer_paused">Tha an tìmear ’na stad</string>
-    <string name="timers_stopped">Tha na tìmearan (<xliff:g example="7" id="number">%d</xliff:g>) ’nan stad</string>
     <string name="timers_in_use"><xliff:g example="7" id="number">%d</xliff:g> tìmear(an)</string>
-    <string name="next_timer_notif">An t-ath-thìmear: <xliff:g example="2 minutes remaining" id="time_remaining">%s</xliff:g></string>
     <string name="expand_alarm">Leudaich a’ chaismeachd</string>
     <string name="collapse_alarm">Co-theannaich a’ chaismeachd</string>
     <string name="alarm_deleted">Chaidh a’ chaismeachd a sguabadh às</string>

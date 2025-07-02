@@ -146,7 +146,7 @@ public class DigitalAppWidgetProvider extends AppWidgetProvider {
         );
 
         rv.setCharSequence(R.id.clock, "setFormat12Hour",
-                ClockUtils.get12ModeFormat(context, 0.4f,
+                ClockUtils.get12ModeFormat(context, WidgetUtils.getAmPmRatio(false, prefs),
                         WidgetDAO.areSecondsDisplayedOnDigitalWidget(prefs)));
         rv.setCharSequence(R.id.clock, "setFormat24Hour",
                 ClockUtils.get24ModeFormat(context,
@@ -277,6 +277,10 @@ public class DigitalAppWidgetProvider extends AppWidgetProvider {
         @SuppressLint("InflateParams")
         final View sizer = inflater.inflate(R.layout.standard_digital_widget_sizer, null);
 
+        int horizontalPadding = ThemeUtils.convertDpToPixels(
+                WidgetDAO.isDigitalWidgetHorizontalPaddingApplied(prefs) ? 20 : 0, context);
+        sizer.setPadding(horizontalPadding, 0, horizontalPadding, 0);
+
         // Configure the date to display the current date string.
         final TextView date = sizer.findViewById(R.id.date);
         if (WidgetDAO.isDateDisplayedOnDigitalWidget(prefs)) {
@@ -353,7 +357,7 @@ public class DigitalAppWidgetProvider extends AppWidgetProvider {
 
         // Adjust the font sizes.
         measuredSizes.setClockFontSizePx(clockFontSize);
-        clock.setText(WidgetUtils.getLongestTimeString(clock));
+        clock.setText(WidgetUtils.getLongestTimeString(clock, false));
         clock.setTextSize(COMPLEX_UNIT_PX, measuredSizes.mClockFontSizePx);
         date.setTextSize(COMPLEX_UNIT_PX, measuredSizes.mFontSizePx);
         nextAlarm.setTextSize(COMPLEX_UNIT_PX, measuredSizes.mFontSizePx);

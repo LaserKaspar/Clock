@@ -4,7 +4,11 @@ package com.best.deskclock.ringtone;
 
 import static androidx.media3.common.Player.REPEAT_MODE_ONE;
 
+import static com.best.deskclock.DeskClockApplication.getDefaultSharedPreferences;
+import static com.best.deskclock.settings.PreferencesKeys.KEY_AUTO_ROUTING_TO_BLUETOOTH_DEVICE;
+
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.media.AudioDeviceCallback;
 import android.media.AudioDeviceInfo;
 import android.media.AudioManager;
@@ -23,6 +27,7 @@ import androidx.media3.common.util.UnstableApi;
 import androidx.media3.exoplayer.ExoPlayer;
 
 import com.best.deskclock.R;
+import com.best.deskclock.data.SettingsDAO;
 import com.best.deskclock.utils.LogUtils;
 import com.best.deskclock.utils.RingtoneUtils;
 import com.best.deskclock.utils.SdkUtils;
@@ -59,18 +64,17 @@ public final class RingtonePlayer {
     private static final float IN_CALL_VOLUME = 0.12f;
 
     private final Context mContext;
-
+    private final SharedPreferences mPrefs;
     private ExoPlayer mExoPlayer;
-
     private final AudioManager mAudioManager;
-
     private AudioDeviceCallback mAudioDeviceCallback;
 
+    private boolean mIsAutoRoutingToBluetoothDeviceEnabled;
     private long mCrescendoDuration = 0;
     private long mCrescendoStopTime = 0;
-
     private int mOriginalMediaVolume = -1;
     private boolean mMediaVolumeModified = false;
+    private boolean mIsCrescendoRunningForSystemMediaVolume = false;
 
     private final Handler mVolumeHandler = new Handler(Looper.getMainLooper());
 
@@ -82,6 +86,33 @@ public final class RingtonePlayer {
             }
         }
     };
+
+    /**
+     * Allows to detect when the preference related to automatic routing to Bluetooth devices changes,
+     * in order to dynamically update the behavior of the ringtone player.
+     */
+    private final SharedPreferences.OnSharedPreferenceChangeListener mPrefListener =
+            new SharedPreferences.OnSharedPreferenceChangeListener() {
+
+                @Override
+                public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+                    if (KEY_AUTO_ROUTING_TO_BLUETOOTH_DEVICE.equals(key)) {
+                        mIsAutoRoutingToBluetoothDeviceEnabled =
+                                SettingsDAO.isAutoRoutingToBluetoothDeviceEnabled(sharedPreferences);
+
+                        if (mIsAutoRoutingToBluetoothDeviceEnabled) {
+                            if (mAudioDeviceCallback == null) {
+                                initAudioDeviceCallback();
+                            }
+                        } else {
+                            if (mAudioDeviceCallback != null) {
+                                mAudioManager.unregisterAudioDeviceCallback(mAudioDeviceCallback);
+                                mAudioDeviceCallback = null;
+                            }
+                        }
+                    }
+                }
+            };
 
     /**
      * Constructs a new {@link RingtonePlayer} instance responsible for managing alarm playback,
@@ -99,7 +130,11 @@ public final class RingtonePlayer {
             mContext = context;
         }
         mAudioManager = (AudioManager) mContext.getSystemService(Context.AUDIO_SERVICE);
-        initAudioDeviceCallback();
+
+        mPrefs = getDefaultSharedPreferences(mContext);
+        mPrefs.registerOnSharedPreferenceChangeListener(mPrefListener);
+
+        mIsAutoRoutingToBluetoothDeviceEnabled = SettingsDAO.isAutoRoutingToBluetoothDeviceEnabled(mPrefs);
     }
 
     /**
@@ -160,29 +195,33 @@ public final class RingtonePlayer {
      */
     public void play(Uri ringtoneUri, long crescendoDuration) {
         if (mExoPlayer != null) {
+            stopSystemMediaVolumeCrescendo();
             stop();
         }
 
-        if (mAudioDeviceCallback == null) {
+        if (mIsAutoRoutingToBluetoothDeviceEnabled && mAudioDeviceCallback == null) {
             initAudioDeviceCallback();
         }
 
         mCrescendoDuration = crescendoDuration;
 
-        // If a Bluetooth device is connected, set the media volume to 70% of its maximum;
+        boolean isBluetooth = false;
+        AudioDeviceInfo preferredDevice = null;
+
+        if (mIsAutoRoutingToBluetoothDeviceEnabled) {
+            isBluetooth = RingtoneUtils.hasBluetoothDeviceConnected(mContext, mPrefs);
+            preferredDevice = findBluetoothDevice();
+        }
+
+        // If a Bluetooth device is connected, set the media volume;
         // Otherwise, mute the media volume to so that the alarm can be heard properly
-        int maxMediaVolume = mAudioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
+        mOriginalMediaVolume = mAudioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
 
-        if (hasBluetoothDeviceConnected()) {
-            mOriginalMediaVolume = mAudioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
-            int increasedVolume = (int) (maxMediaVolume * 0.7);
-
-            if (mOriginalMediaVolume < increasedVolume) {
-                mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, increasedVolume, 0);
-                mMediaVolumeModified = true;
+        if (isBluetooth) {
+            if (SettingsDAO.shouldUseCustomMediaVolume(mPrefs)) {
+                setMediaVolumeForBluetoothDevices(getBluetoothVolumeFromPrefs());
             }
         } else {
-            mOriginalMediaVolume = mAudioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
             int reducedVolume = 0;
 
             if (mOriginalMediaVolume > reducedVolume) {
@@ -191,7 +230,6 @@ public final class RingtonePlayer {
             }
         }
 
-        boolean isBluetooth = hasBluetoothDeviceConnected();
         mExoPlayer = new ExoPlayer.Builder(mContext)
                 .setAudioAttributes(buildAudioAttributes(isBluetooth), isBluetooth)
                 .build();
@@ -213,8 +251,6 @@ public final class RingtonePlayer {
         mExoPlayer.setMediaItem(MediaItem.fromUri(ringtoneUri));
 
         mExoPlayer.setRepeatMode(REPEAT_MODE_ONE);
-
-        AudioDeviceInfo preferredDevice = findBluetoothDevice();
 
         if (preferredDevice == null) {
             preferredDevice = findSpeakerDevice(mAudioManager);
@@ -238,9 +274,11 @@ public final class RingtonePlayer {
      * the system state, including volume levels and registered listeners.</p>
      */
     public void stop() {
+        stopSystemMediaVolumeCrescendo();
+
         if (mExoPlayer != null) {
-            mExoPlayer.removeListener(mPlayerListener);
             mExoPlayer.stop();
+            mExoPlayer.removeListener(mPlayerListener);
             mExoPlayer.release();
             mExoPlayer = null;
         }
@@ -260,7 +298,7 @@ public final class RingtonePlayer {
         }
         mOriginalMediaVolume = -1;
 
-        if (mAudioDeviceCallback != null) {
+        if (mIsAutoRoutingToBluetoothDeviceEnabled && mAudioDeviceCallback != null) {
             mAudioManager.unregisterAudioDeviceCallback(mAudioDeviceCallback);
             mAudioDeviceCallback = null;
         }
@@ -296,6 +334,28 @@ public final class RingtonePlayer {
     }
 
     /**
+     * @param currentTime current time of the device
+     * @param stopTime    time at which the crescendo finishes
+     * @param duration    length of time over which the crescendo occurs
+     * @return the scalar volume value that produces a linear increase in volume (in decibels)
+     */
+    private static float computeVolume(long currentTime, long stopTime, long duration) {
+        // Compute the percentage of the crescendo that has completed.
+        float fractionComplete = 1 - Math.max(0f, Math.min(1f, (stopTime - currentTime) / (float) duration));
+
+        // Use the fraction to compute a target decibel between -40dB (near silent) and 0dB (max).
+        final float gain = (fractionComplete * 40) - 40;
+
+        // Convert the target gain (in decibels) into the corresponding volume scalar.
+        final float volume = (float) Math.pow(10f, gain / 20f);
+
+        LOGGER.v("Ringtone crescendo %,.2f%% complete (scalar: %f, volume: %f dB)",
+                fractionComplete * 100, volume, gain);
+
+        return volume;
+    }
+
+    /**
      * Registers an {@link AudioDeviceCallback} to monitor audio output device changes,
      * such as Bluetooth connections or disconnections.
      *
@@ -304,7 +364,7 @@ public final class RingtonePlayer {
      * removed, playback is redirected to the built-in speaker, and the media volume is restored.</p>
      */
     private void initAudioDeviceCallback() {
-        if (mAudioDeviceCallback != null) {
+        if (!mIsAutoRoutingToBluetoothDeviceEnabled || mAudioDeviceCallback != null) {
             return;
         }
 
@@ -312,26 +372,16 @@ public final class RingtonePlayer {
             @Override
             public void onAudioDevicesAdded(AudioDeviceInfo[] addedDevices) {
                 for (AudioDeviceInfo device : addedDevices) {
-                    if (isBluetoothDevice(device)) {
+                    if (RingtoneUtils.isBluetoothDevice(device)) {
                         LOGGER.v("Bluetooth device connected: forcing playback to it");
                         if (mExoPlayer != null) {
                             mExoPlayer.setPreferredAudioDevice(device);
 
                             mExoPlayer.setAudioAttributes(buildAudioAttributes(true), true);
 
-                            // Set the media volume to 70% of its maximum if the current volume is
-                            // lower than this value so that the alarm can be heard properly
-                            if (mAudioManager != null) {
-                                int currentVolume = mAudioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
-                                int maxVolume = mAudioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
-                                int increasedVolume = (int) (maxVolume * 0.7);
-                                if (currentVolume < increasedVolume) {
-                                    if (mOriginalMediaVolume == -1) {
-                                        mOriginalMediaVolume = currentVolume;
-                                    }
-                                    mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, increasedVolume, 0);
-                                    mMediaVolumeModified = true;
-                                }
+                            // Set the media volume for Bluetooth devices
+                            if (SettingsDAO.shouldUseCustomMediaVolume(mPrefs) && mAudioManager != null) {
+                                setMediaVolumeForBluetoothDevices(getBluetoothVolumeFromPrefs());
                             }
                         }
                     }
@@ -341,7 +391,7 @@ public final class RingtonePlayer {
             @Override
             public void onAudioDevicesRemoved(AudioDeviceInfo[] removedDevices) {
                 for (AudioDeviceInfo device : removedDevices) {
-                    if (isBluetoothDevice(device)) {
+                    if (RingtoneUtils.isBluetoothDevice(device)) {
                         LOGGER.v("Bluetooth device disconnected: switching back to speaker");
                         if (mExoPlayer != null) {
                             AudioDeviceInfo speaker = findSpeakerDevice(mAudioManager);
@@ -370,6 +420,74 @@ public final class RingtonePlayer {
     }
 
     /**
+     * Adjusts the media volume when a Bluetooth device is connected.
+     *
+     * <p>If the current system media volume is lower than the target volume, this method starts
+     * a smooth crescendo to the target volume to avoid a brief volume spike.
+     * Otherwise, it immediately sets the volume to the target level.</p>
+     *
+     * @param targetVolume The desired media volume level for Bluetooth devices.
+     */
+    private void setMediaVolumeForBluetoothDevices(int targetVolume) {
+        if (targetVolume <= 0 || targetVolume > mAudioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC)) {
+            return;
+        }
+
+        int currentVolume = mAudioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
+
+        if (mOriginalMediaVolume == -1) {
+            mOriginalMediaVolume = currentVolume;
+        }
+
+        if (currentVolume < targetVolume) {
+            startSystemMediaVolumeCrescendo(targetVolume);
+        } else {
+            mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, targetVolume, 0);
+        }
+
+        mMediaVolumeModified = true;
+    }
+
+    /**
+     * Gradually increases the system media volume from the current level up to the specified target volume.
+     *
+     * <p>The crescendo lasts approximately 2 seconds and increments the volume in discrete steps.
+     * If the target volume is less than or equal to the current volume, no action is taken.</p>
+     *
+     * @param targetVolume The target volume level to reach at the end of the crescendo.
+     */
+    private void startSystemMediaVolumeCrescendo(final int targetVolume) {
+        final int startVolume = mAudioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
+        final int volumeDiff = targetVolume - startVolume;
+        if (volumeDiff <= 0) {
+            return;
+        }
+
+        final int steps = Math.abs(volumeDiff);
+        final long stepDuration = 2000 / steps;
+        mIsCrescendoRunningForSystemMediaVolume = true;
+
+        for (int i = 1; i <= steps; i++) {
+            final int newVolume = startVolume + i;
+            mVolumeHandler.postDelayed(() -> {
+                if (mIsCrescendoRunningForSystemMediaVolume) {
+                    mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, newVolume, 0);
+                }
+            }, stepDuration * i);
+        }
+    }
+
+    /**
+     * Stops any ongoing system media volume crescendo.
+     *
+     * <p>After calling this method, scheduled volume increases from a previous
+     * call to {@link #startSystemMediaVolumeCrescendo(int)} will be cancelled.</p>
+     */
+    private void stopSystemMediaVolumeCrescendo() {
+        mIsCrescendoRunningForSystemMediaVolume = false;
+    }
+
+    /**
      * Builds and returns {@link AudioAttributes} for the ExoPlayer instance based on output target.
      *
      * <p>If a Bluetooth device is connected, usage is set to {@link C#USAGE_MEDIA} to enable playback.
@@ -380,6 +498,15 @@ public final class RingtonePlayer {
                 .setUsage(bluetoothConnected ? C.USAGE_MEDIA : C.USAGE_ALARM)
                 .setContentType(C.AUDIO_CONTENT_TYPE_SONIFICATION)
                 .build();
+    }
+
+    /**
+     * @return the volume value when a Bluetooth device is connected.
+     */
+    private int getBluetoothVolumeFromPrefs() {
+        int userVolume = SettingsDAO.getBluetoothVolumeValue(mPrefs);
+        int maxVolume = mAudioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
+        return (int) (maxVolume * (userVolume / 100f));
     }
 
     /**
@@ -414,64 +541,23 @@ public final class RingtonePlayer {
     }
 
     /**
-     * @param currentTime current time of the device
-     * @param stopTime    time at which the crescendo finishes
-     * @param duration    length of time over which the crescendo occurs
-     * @return the scalar volume value that produces a linear increase in volume (in decibels)
-     */
-    private static float computeVolume(long currentTime, long stopTime, long duration) {
-        // Compute the percentage of the crescendo that has completed.
-        float fractionComplete = 1 - Math.max(0f, Math.min(1f, (stopTime - currentTime) / (float) duration));
-
-        // Use the fraction to compute a target decibel between -40dB (near silent) and 0dB (max).
-        final float gain = (fractionComplete * 40) - 40;
-
-        // Convert the target gain (in decibels) into the corresponding volume scalar.
-        final float volume = (float) Math.pow(10f, gain / 20f);
-
-        LOGGER.v("Ringtone crescendo %,.2f%% complete (scalar: %f, volume: %f dB)",
-                fractionComplete * 100, volume, gain);
-
-        return volume;
-    }
-
-    /**
      * Searches for and returns the first connected Bluetooth output device.
      *
      * <p>Iterates through all available output audio devices to find one that matches
      * known Bluetooth device types (A2DP or SCO).</p>
      */
     private AudioDeviceInfo findBluetoothDevice() {
+        if (!mIsAutoRoutingToBluetoothDeviceEnabled) {
+            return null;
+        }
+
         for (AudioDeviceInfo device : mAudioManager.getDevices(AudioManager.GET_DEVICES_OUTPUTS)) {
-            if (isBluetoothDevice(device)) {
+            if (RingtoneUtils.isBluetoothDevice(device)) {
                 return device;
             }
         }
 
         return null;
-    }
-
-    /**
-     * @return {@code true} if the Bluetooth device is of type A2DP or SCO Bluetooth.
-     * {@code false} otherwise.
-     */
-    private static boolean isBluetoothDevice(AudioDeviceInfo device) {
-        int type = device.getType();
-        return type == AudioDeviceInfo.TYPE_BLUETOOTH_A2DP || type == AudioDeviceInfo.TYPE_BLUETOOTH_SCO;
-    }
-
-    /**
-     * @return {@code true} if a Bluetooth output device is connected. {@code false} otherwise.
-     */
-    private boolean hasBluetoothDeviceConnected() {
-        AudioDeviceInfo[] devices = mAudioManager.getDevices(AudioManager.GET_DEVICES_OUTPUTS);
-        for (AudioDeviceInfo device : devices) {
-            if (isBluetoothDevice(device)) {
-                return true;
-            }
-        }
-
-        return false;
     }
 
     /**
@@ -485,5 +571,17 @@ public final class RingtonePlayer {
         }
 
         return null;
+    }
+
+    /**
+     * Unregisters the preference change listener used to monitor changes
+     * in user settings related to audio routing.
+     *
+     * <p>This should be called when the ringtone player is no longer needed
+     * or when the surrounding component (e.g. Activity or Service) is being stopped,
+     * to avoid memory leaks and unnecessary listener callbacks.</p>
+     */
+    public void stopListeningToPreferences() {
+        mPrefs.unregisterOnSharedPreferenceChangeListener(mPrefListener);
     }
 }

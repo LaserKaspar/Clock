@@ -58,8 +58,14 @@ public class PreferencesDefaultValues {
 
     // Alarm
     public static final String DEFAULT_AUTO_SILENCE = "10";
-    public static final String DEFAULT_ALARM_SNOOZE_DURATION = "10";
-    public static final String DEFAULT_ALARM_CRESCENDO_DURATION = "0";
+    public static final int ALARM_TIMEOUT_NEVER = -1;
+    public static final int ALARM_TIMEOUT_AT_THE_END_OF_THE_RINGTONE = -2;
+    public static final int DEFAULT_ALARM_SNOOZE_DURATION = 10;
+    public static final int DEFAULT_ALARM_VOLUME_CRESCENDO_DURATION = 0;
+    public static final boolean DEFAULT_ADVANCED_AUDIO_PLAYBACK = false;
+    public static final boolean DEFAULT_AUTO_ROUTING_TO_BLUETOOTH_DEVICE = false;
+    public static final boolean DEFAULT_SYSTEM_MEDIA_VOLUME = true;
+    public static final int DEFAULT_BLUETOOTH_VOLUME = 70;
     public static final boolean DEFAULT_SWIPE_ACTION = true;
     public static final String DEFAULT_VOLUME_BEHAVIOR = "-1";
     public static final String VOLUME_BEHAVIOR_CHANGE_VOLUME = "0";
@@ -101,8 +107,10 @@ public class PreferencesDefaultValues {
     }
 
     // Timer
+    public static final String DEFAULT_TIMER_CREATION_VIEW_STYLE = "keypad";
+    public static final String TIMER_CREATION_VIEW_SPINNER_STYLE = "spinner";
     public static final String DEFAULT_TIMER_AUTO_SILENCE = "30";
-    public static final String DEFAULT_TIMER_CRESCENDO_DURATION = "0";
+    public static final int DEFAULT_TIMER_VOLUME_CRESCENDO_DURATION = 0;
     public static final boolean DEFAULT_TIMER_VIBRATE = false;
     public static final boolean DEFAULT_TIMER_VOLUME_BUTTONS_ACTION = false;
     public static final boolean DEFAULT_TIMER_POWER_BUTTON_ACTION = false;
@@ -145,6 +153,7 @@ public class PreferencesDefaultValues {
 
     // DigitalWidgetSettingsFragment
     public static final boolean DEFAULT_DIGITAL_WIDGET_DISPLAY_SECONDS = false;
+    public static final boolean DEFAULT_DIGITAL_WIDGET_HIDE_AM_PM = false;
     public static final boolean DEFAULT_DIGITAL_WIDGET_DISPLAY_DATE = true;
     public static final boolean DEFAULT_DIGITAL_WIDGET_DISPLAY_NEXT_ALARM = true;
     public static final boolean DEFAULT_DIGITAL_WIDGET_DISPLAY_BACKGROUND = false;
@@ -163,6 +172,7 @@ public class PreferencesDefaultValues {
 
     // Material You Digital Widget
     public static final boolean DEFAULT_MATERIAL_YOU_DIGITAL_WIDGET_DISPLAY_SECONDS = false;
+    public static final boolean DEFAULT_MATERIAL_YOU_DIGITAL_WIDGET_HIDE_AM_PM = false;
     public static final boolean DEFAULT_MATERIAL_YOU_DIGITAL_WIDGET_DISPLAY_DATE = true;
     public static final boolean DEFAULT_MATERIAL_YOU_DIGITAL_WIDGET_DISPLAY_NEXT_ALARM = true;
     public static final boolean DEFAULT_MATERIAL_YOU_DIGITAL_WIDGET_WORLD_CITIES_DISPLAYED = true;
@@ -176,5 +186,5 @@ public class PreferencesDefaultValues {
     public static final int DEFAULT_WIDGETS_BACKGROUND_COLOR = Color.parseColor("#70000000");
     public static final int DEFAULT_WIDGETS_CUSTOM_COLOR = Color.WHITE;
     public static final int DEFAULT_WIDGETS_FONT_SIZE = 70;
-
+    public static final boolean DEFAULT_WIDGETS_APPLY_HORIZONTAL_PADDING = true;
 }

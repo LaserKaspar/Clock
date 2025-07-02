@@ -103,44 +103,6 @@
     <string name="auto_silence_20_minutes">Dakika 20</string>
     <string name="auto_silence_25_minutes">Dakika 25</string>
     <string name="label_off">Kimezimwa</string>
-    <string name="crescendo_5_seconds">Sekunde 5</string>
-    <string name="crescendo_10_seconds">Sekunde 10</string>
-    <string name="crescendo_15_seconds">Sekunde 15</string>
-    <string name="crescendo_20_seconds">Sekunde 20</string>
-    <string name="crescendo_30_seconds">Sekunde 30</string>
-    <string name="crescendo_40_seconds">Sekunde 40</string>
-    <string name="crescendo_50_seconds">Sekunde 50</string>
-    <string name="crescendo_60_seconds">Sekunde 60</string>
-    <string name="snooze_duration_1_minute">Dakika 1</string>
-    <string name="snooze_duration_2_minutes">Dakika 2</string>
-    <string name="snooze_duration_3_minutes">Dakika 3</string>
-    <string name="snooze_duration_4_minutes">Dakika 4</string>
-    <string name="snooze_duration_5_minutes">Dakika 5</string>
-    <string name="snooze_duration_6_minutes">Dakika 6</string>
-    <string name="snooze_duration_7_minutes">Dakika 7</string>
-    <string name="snooze_duration_8_minutes">Dakika 8</string>
-    <string name="snooze_duration_9_minutes">Dakika 9</string>
-    <string name="snooze_duration_10_minutes">Dakika 10</string>
-    <string name="snooze_duration_11_minutes">Dakika 11</string>
-    <string name="snooze_duration_12_minutes">Dakika 12</string>
-    <string name="snooze_duration_13_minutes">Dakika 13</string>
-    <string name="snooze_duration_14_minutes">Dakika 14</string>
-    <string name="snooze_duration_15_minutes">Dakika 15</string>
-    <string name="snooze_duration_16_minutes">Dakika 16</string>
-    <string name="snooze_duration_17_minutes">Dakika 17</string>
-    <string name="snooze_duration_18_minutes">Dakika 18</string>
-    <string name="snooze_duration_19_minutes">Dakika 19</string>
-    <string name="snooze_duration_20_minutes">Dakika 20</string>
-    <string name="snooze_duration_21_minutes">Dakika 21</string>
-    <string name="snooze_duration_22_minutes">Dakika 22</string>
-    <string name="snooze_duration_23_minutes">Dakika 23</string>
-    <string name="snooze_duration_24_minutes">Dakika 24</string>
-    <string name="snooze_duration_25_minutes">Dakika 25</string>
-    <string name="snooze_duration_26_minutes">Dakika 26</string>
-    <string name="snooze_duration_27_minutes">Dakika 27</string>
-    <string name="snooze_duration_28_minutes">Dakika 28</string>
-    <string name="snooze_duration_29_minutes">Dakika 29</string>
-    <string name="snooze_duration_30_minutes">Dakika 30</string>
     <string name="week_start_title" msgid="4268917518596832096">"Anza wiki siku ya"</string>
     <string name="week_start_saturday">Jumamosi</string>
     <string name="week_start_sunday">Jumapili</string>
@@ -329,10 +291,7 @@
     <string name="timer_settings" msgid="7955522143086154795">"Vipima muda"</string>
     <string name="timer_vibrate_title" msgid="7788920024785587518">"Mtetemo wa kipima muda"</string>
     <string name="timer_paused" msgid="5941160896040771462">"Kipima wakati kimesitishwa"</string>
-    <string name="timers_stopped" msgid="3186191253226005149">"Vipima wakati <xliff:g id="NUMBER">%d</xliff:g> vimesitishwa"</string>
-    <string name="all_timers_stopped_notif" msgid="883027111895833440">"Gusa ili uone vipima muda vyako"</string>
     <string name="timers_in_use" msgid="5570729467344408506">"Vipima wakati <xliff:g id="NUMBER">%d</xliff:g>"</string>
-    <string name="next_timer_notif" msgid="6136454740115613653">"Kipima wakati Kinachofuata: <xliff:g id="TIME_REMAINING">%s</xliff:g>"</string>
     <string name="expand_alarm" msgid="7392616528943305020">"Panua kengele"</string>
     <string name="collapse_alarm" msgid="3561772046433483980">"Kunja kengele"</string>
     <string name="alarm_deleted" msgid="6131529309389084785">"Kengele imefutwa"</string>

@@ -66,12 +66,9 @@
             app:singleLineTitle="false"
             tools:layout="@layout/settings_preference_layout" />
 
-        <ListPreference
-            android:key="key_snooze_duration"
+        <com.best.deskclock.settings.AlarmSnoozeDurationPreference
+            android:key="key_alarm_snooze_duration"
             android:title="@string/snooze_duration_title"
-            android:entries="@array/snooze_duration_entries"
-            android:entryValues="@array/snooze_duration_values"
-            android:defaultValue="10"
             app:iconSpaceReserved="false"
             app:singleLineTitle="false"
             tools:layout="@layout/settings_preference_layout" />
@@ -84,15 +81,48 @@
             app:singleLineTitle="false"
             tools:layout="@layout/settings_preference_seekbar_layout" />
 
-        <ListPreference
-            android:key="key_alarm_crescendo_duration"
+        <com.best.deskclock.settings.VolumeCrescendoDurationPreference
+            android:key="key_alarm_volume_crescendo_duration"
             android:title="@string/crescendo_duration_title"
-            android:entries="@array/crescendo_entries"
-            android:entryValues="@array/crescendo_values"
-            android:defaultValue="0"
             app:iconSpaceReserved="false"
             app:singleLineTitle="false"
             tools:layout="@layout/settings_preference_layout" />
+
+        <SwitchPreferenceCompat
+            android:key="key_advanced_audio_playback"
+            android:title="@string/advanced_audio_playback_title"
+            android:summary="@string/advanced_audio_playback_summary"
+            android:defaultValue="false"
+            app:iconSpaceReserved="false"
+            app:singleLineTitle="false"
+            tools:layout="@layout/settings_preference_layout" />
+
+        <SwitchPreferenceCompat
+            android:key="key_auto_routing_to_bluetooth_device"
+            android:title="@string/auto_routing_to_bluetooth_device_title"
+            android:defaultValue="false"
+            app:iconSpaceReserved="false"
+            app:singleLineTitle="false"
+            tools:layout="@layout/settings_preference_layout" />
+
+        <SwitchPreferenceCompat
+            android:key="key_system_media_volume"
+            android:title="@string/system_media_volume_title"
+            android:summary="@string/system_media_volume_summary"
+            android:defaultValue="true"
+            app:iconSpaceReserved="false"
+            app:singleLineTitle="false"
+            tools:layout="@layout/settings_preference_layout" />
+
+        <com.best.deskclock.settings.CustomSeekbarPreference
+            android:key="key_bluetooth_volume"
+            android:title="@string/bluetooth_volume_title"
+            android:summary="@string/label_default"
+            android:defaultValue="70"
+            android:max="100"
+            app:iconSpaceReserved="false"
+            app:singleLineTitle="false"
+            tools:layout="@layout/settings_preference_seekbar_layout" />
 
     </PreferenceCategory>
 

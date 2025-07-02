@@ -37,6 +37,8 @@
     <string name="duplicate">Duplicate</string>
     <!-- Label "Warning" -->
     <string name="warning">Warning</string>
+    <!-- Label "Hours" -->
+    <string name="label_hours">Hours</string>
     <!-- Label "Minutes" -->
     <string name="label_minutes">Minutes</string>
     <!-- Label "Seconds" -->
@@ -405,6 +407,23 @@
     <string name="alarm_notification_reminder_10_hours">10 hours before</string>
     <!-- Setting title for changing the notification reminder to 12 hours before. -->
     <string name="alarm_notification_reminder_12_hours">12 hours before</string>
+    <!-- Setting title to enable advanced audio playback. -->
+    <string name="advanced_audio_playback_title">Use advanced audio playback</string>
+    <!-- Setting summary to clarify what the "Use advanced audio playback" setting implies -->
+    <string name="advanced_audio_playback_summary">Improves Bluetooth compatibility and prevents sound interruptions during repetition
+        \n\nNote: Some ringtones may have slight audio glitches</string>
+    <!-- Setting title to enable automatic routing to bluetooth devices for ringtones -->
+    <string name="auto_routing_to_bluetooth_device_title">Enable automatic routing of ringtones to Bluetooth devices</string>
+    <!-- Setting title to enable the use of system media volume. -->
+    <string name="system_media_volume_title">Use system media volume</string>
+    <!-- Setting summary about the use of system media volume. -->
+    <string name="system_media_volume_summary">Only works if a Bluetooth device is connected</string>
+    <!-- Setting title for changing the volume when a Bluetooth device is connected. -->
+    <string name="bluetooth_volume_title">Alarm volume for Bluetooth devices</string>
+    <!-- Setting title to indicate that a Bluetooth device should be connected. -->
+    <string name="connect_bluetooth_device_title">Connect a Bluetooth device to access this setting</string>
+    <!-- Setting title to indicate that a Bluetooth device should be disconnected. -->
+    <string name="disconnect_bluetooth_device_title">Disconnect the Bluetooth device to access this setting</string>
     <!-- Setting title to enable vibrations when creating alarms -->
     <string name="enable_alarm_vibrations_by_default_setting_title">Enable vibrations when creating alarms</string>
     <!-- Setting title to enable vibrations when alarm is snoozed or dismissed -->
@@ -484,82 +503,6 @@
     <string name="auto_silence_20_minutes">20 minutes</string>
     <!-- Setting title for changing the auto silence to 25 minutes. -->
     <string name="auto_silence_25_minutes">25 minutes</string>
-    <!-- Setting title for changing the gradually increase volume to 5 seconds. -->
-    <string name="crescendo_5_seconds">5 seconds</string>
-    <!-- Setting title for changing the gradually increase volume to 10 seconds. -->
-    <string name="crescendo_10_seconds">10 seconds</string>
-    <!-- Setting title for changing the gradually increase volume to 15 seconds. -->
-    <string name="crescendo_15_seconds">15 seconds</string>
-    <!-- Setting title for changing the gradually increase volume to 20 seconds. -->
-    <string name="crescendo_20_seconds">20 seconds</string>
-    <!-- Setting title for changing the gradually increase volume to 30 seconds. -->
-    <string name="crescendo_30_seconds">30 seconds</string>
-    <!-- Setting title for changing the gradually increase volume to 40 seconds. -->
-    <string name="crescendo_40_seconds">40 seconds</string>
-    <!-- Setting title for changing the gradually increase volume to 50 seconds. -->
-    <string name="crescendo_50_seconds">50 seconds</string>
-    <!-- Setting title for changing the gradually increase volume to 60 seconds. -->
-    <string name="crescendo_60_seconds">60 seconds</string>
-    <!-- Setting title for changing the snooze duration to 1 minute. -->
-    <string name="snooze_duration_1_minute">1 minute</string>
-    <!-- Setting title for changing the snooze duration to 2 minutes. -->
-    <string name="snooze_duration_2_minutes">2 minutes</string>
-    <!-- Setting title for changing the snooze duration to 3 minutes. -->
-    <string name="snooze_duration_3_minutes">3 minutes</string>
-    <!-- Setting title for changing the snooze duration to 4 minutes. -->
-    <string name="snooze_duration_4_minutes">4 minutes</string>
-    <!-- Setting title for changing the snooze duration to 5 minutes. -->
-    <string name="snooze_duration_5_minutes">5 minutes</string>
-    <!-- Setting title for changing the snooze duration to 6 minutes. -->
-    <string name="snooze_duration_6_minutes">6 minutes</string>
-    <!-- Setting title for changing the snooze duration to 7 minutes. -->
-    <string name="snooze_duration_7_minutes">7 minutes</string>
-    <!-- Setting title for changing the snooze duration to 8 minutes. -->
-    <string name="snooze_duration_8_minutes">8 minutes</string>
-    <!-- Setting title for changing the snooze duration to 9 minutes. -->
-    <string name="snooze_duration_9_minutes">9 minutes</string>
-    <!-- Setting title for changing the snooze duration to 10 minutes. -->
-    <string name="snooze_duration_10_minutes">10 minutes</string>
-    <!-- Setting title for changing the snooze duration to 11 minutes. -->
-    <string name="snooze_duration_11_minutes">11 minutes</string>
-    <!-- Setting title for changing the snooze duration to 12 minutes. -->
-    <string name="snooze_duration_12_minutes">12 minutes</string>
-    <!-- Setting title for changing the snooze duration to 13 minutes. -->
-    <string name="snooze_duration_13_minutes">13 minutes</string>
-    <!-- Setting title for changing the snooze duration to 14 minutes. -->
-    <string name="snooze_duration_14_minutes">14 minutes</string>
-    <!-- Setting title for changing the snooze duration to 15 minutes. -->
-    <string name="snooze_duration_15_minutes">15 minutes</string>
-    <!-- Setting title for changing the snooze duration to 16 minutes. -->
-    <string name="snooze_duration_16_minutes">16 minutes</string>
-    <!-- Setting title for changing the snooze duration to 17 minutes. -->
-    <string name="snooze_duration_17_minutes">17 minutes</string>
-    <!-- Setting title for changing the snooze duration to 18 minutes. -->
-    <string name="snooze_duration_18_minutes">18 minutes</string>
-    <!-- Setting title for changing the snooze duration to 19 minutes. -->
-    <string name="snooze_duration_19_minutes">19 minutes</string>
-    <!-- Setting title for changing the snooze duration to 20 minutes. -->
-    <string name="snooze_duration_20_minutes">20 minutes</string>
-    <!-- Setting title for changing the snooze duration to 21 minutes. -->
-    <string name="snooze_duration_21_minutes">21 minutes</string>
-    <!-- Setting title for changing the snooze duration to 22 minutes. -->
-    <string name="snooze_duration_22_minutes">22 minutes</string>
-    <!-- Setting title for changing the snooze duration to 23 minutes. -->
-    <string name="snooze_duration_23_minutes">23 minutes</string>
-    <!-- Setting title for changing the snooze duration to 24 minutes. -->
-    <string name="snooze_duration_24_minutes">24 minutes</string>
-    <!-- Setting title for changing the snooze duration to 25 minutes. -->
-    <string name="snooze_duration_25_minutes">25 minutes</string>
-    <!-- Setting title for changing the snooze duration to 26 minutes. -->
-    <string name="snooze_duration_26_minutes">26 minutes</string>
-    <!-- Setting title for changing the snooze duration to 27 minutes. -->
-    <string name="snooze_duration_27_minutes">27 minutes</string>
-    <!-- Setting title for changing the snooze duration to 28 minutes. -->
-    <string name="snooze_duration_28_minutes">28 minutes</string>
-    <!-- Setting title for changing the snooze duration to 29 minutes. -->
-    <string name="snooze_duration_29_minutes">29 minutes</string>
-    <!-- Setting title for changing the snooze duration to 30 minutes. -->
-    <string name="snooze_duration_30_minutes">30 minutes</string>
     <!-- Setting title for changing the snooze duration to None. -->
     <string name="snooze_duration_none">None</string>
     <!-- Week start day preference title. -->
@@ -679,14 +622,22 @@
     <!-- timer strings -->
     <!-- Title of dialog box for editing timer label -->
     <string name="timer_label_box_title">Timer label</string>
+    <!-- Title of dialog box to set a new duration to an existing timer. -->
+    <string name="timer_time_box_title">New timer duration</string>
+    <!-- Text of dialog box to edit hours to set a new duration to an existing timer. -->
+    <string name="timer_hours_warning_box_text">Enter a value between 0 and 24 hours</string>
+    <!-- Text of dialog box to edit minutes to set a new duration to an existing timer. -->
+    <string name="timer_minutes_warning_box_text">Enter a value between 0 and 59 minutes</string>
+    <!-- Text of dialog box to edit seconds to set a new duration to an existing timer. -->
+    <string name="timer_seconds_warning_box_text">Enter a value between 0 and 59 seconds</string>
     <!-- Title of dialog box to edit button for adding time to timer. -->
     <string name="timer_button_time_box_title">Minutes to add to the timer</string>
     <!-- Text of dialog box to edit minutes for adding time to timer. -->
     <string name="timer_button_time_minutes_warning_box_text">Enter a value between 0 and 60 minutes</string>
     <!-- Text of dialog box to edit seconds for adding time to timer. -->
     <string name="timer_button_time_seconds_warning_box_text">Enter a value between 0 and 59 seconds</string>
-    <!-- Title of dialog box to edit button for adding time to timer if the entered value is incorrect. -->
-    <string name="timer_button_time_warning_box_title">Incorrect value entered</string>
+    <!-- Title of dialog box to edit timers if an entered value is incorrect. -->
+    <string name="timer_time_warning_box_title">Incorrect value entered</string>
     <!-- Describes the purpose of the button to add a new timer -->
     <string name="timer_add_timer">Add Timer</string>
     <!-- Describes the purpose of the button to begin or continue running a timer -->
@@ -764,6 +715,8 @@
     <string name="clock_style">Style</string>
     <!-- Header for a setting referring to showing seconds on the main clock -->
     <string name="display_clock_seconds_pref">Display time with seconds</string>
+    <!-- Header for a setting referring to hiding the AM/PM part on the main clock -->
+    <string name="hide_clock_am_pm_pref">Hide AM/PM text</string>
     <!-- Title for preference to change date & time -->
     <string name="open_date_settings">Change date \u0026 time</string>
     <!-- Setting title for changing the clock style to Analog. -->
@@ -1100,6 +1053,10 @@
     <string name="timer_settings">Timers</string>
     <!-- Timer preference summary in the settings -->
     <string name="timer_settings_summary">Set default ringtone, volume and timer sorting</string>
+    <!-- Title for setting the timer creation view style -->
+    <string name="timer_creation_view_style_title">Timer creation view style</string>
+    <!-- Keypad style when creating timer -->
+    <string name="timer_creation_view_style_keypad">Keypad</string>
     <!-- Description for timer vibration. -->
     <string name="timer_vibrate_title">Timer vibrate</string>
     <!-- Setting title to reset expired timers with volume buttons. -->
@@ -1158,14 +1115,8 @@
     <string name="warning_dialog_message">Are you sure you want to delete the \"%s\" timer?</string>
     <!-- Notification title when timer is paused. [CHAR LIMIT=25] -->
     <string name="timer_paused">Timer paused</string>
-    <!-- Notification title when multiple timers are paused. [CHAR LIMIT = 30] -->
-    <string name="timers_stopped"><xliff:g example="7" id="number">%d</xliff:g> timers paused</string>
-    <!-- Notification text when multiple timers are paused. -->
-    <string name="all_timers_stopped_notif">Tap to see your timers</string>
     <!-- Notification title when at least one timer, of those in use, is counting down. -->
     <string name="timers_in_use"><xliff:g example="7" id="number">%d</xliff:g> timers</string>
-    <!-- Notification text when at least one timer, of those in use, is counting down. -->
-    <string name="next_timer_notif">Next timer: <xliff:g example="2 minutes remaining" id="time_remaining">%s</xliff:g></string>
     <!-- Header in the preferences settings for the section pertaining to screensaver -->
     <string name="screensaver_settings_title">Screensaver</string>
     <!-- Summary for the screensaver settings in settings -->
@@ -1434,6 +1385,8 @@
     <string name="digital_widget_max_clock_font_size_title">Maximum font size of main clock</string>
     <!-- Summary about the font size of the clock when cities are shown -->
     <string name="digital_widget_message_summary">\"Display cities on the widget\" must be disabled to access this setting</string>
+    <!-- Title to apply horizontal padding the widgets. -->
+    <string name="widget_apply_horizontal_padding_title">Apply padding to widget sides</string>
     <!-- Title to set the default color of the next alarm title in the next alarm widget. -->
     <string name="next_alarm_widget_default_title_color">Use default color for \"Next alarm\" and \"No upcoming alarm\" titles</string>
     <!-- Title to set the custom color of the "Next alarm" and "No upcoming alarm" titles in the next alarm widget. -->

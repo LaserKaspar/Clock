@@ -139,44 +139,6 @@
     <string name="auto_silence_20_minutes">۲۰ دقيقة</string>
     <string name="auto_silence_25_minutes">٢٥ دقيقة</string>
     <string name="label_off">إيقاف</string>
-    <string name="crescendo_5_seconds">٥ ثوانٍ</string>
-    <string name="crescendo_10_seconds">۱۰ ثوان</string>
-    <string name="crescendo_15_seconds">١٥ ثانية</string>
-    <string name="crescendo_20_seconds">۲۰ ثانية</string>
-    <string name="crescendo_30_seconds">٣۰ ثانية</string>
-    <string name="crescendo_40_seconds">٤٠ ثانية</string>
-    <string name="crescendo_50_seconds">٥۰ ثانية</string>
-    <string name="crescendo_60_seconds">٦٠ ثانية</string>
-    <string name="snooze_duration_1_minute">"دقيقة واحدة"</string>
-    <string name="snooze_duration_2_minutes">"دقيقتان"</string>
-    <string name="snooze_duration_3_minutes">"٣ دقائق"</string>
-    <string name="snooze_duration_4_minutes">"٤ دقائق"</string>
-    <string name="snooze_duration_5_minutes">"٥ دقائق"</string>
-    <string name="snooze_duration_6_minutes">"٦ دقائق"</string>
-    <string name="snooze_duration_7_minutes">"٧ دقائق"</string>
-    <string name="snooze_duration_8_minutes">"٨ دقائق"</string>
-    <string name="snooze_duration_9_minutes">"٩ دقائق"</string>
-    <string name="snooze_duration_10_minutes">"١٠ دقائق"</string>
-    <string name="snooze_duration_11_minutes">"١١ دقيقة"</string>
-    <string name="snooze_duration_12_minutes">"١٢ دقيقة"</string>
-    <string name="snooze_duration_13_minutes">"١٣ دقيقة"</string>
-    <string name="snooze_duration_14_minutes">"١٤ دقيقة"</string>
-    <string name="snooze_duration_15_minutes">"١٥ دقيقة"</string>
-    <string name="snooze_duration_16_minutes">"١٦ دقيقة"</string>
-    <string name="snooze_duration_17_minutes">"١٧ دقيقة"</string>
-    <string name="snooze_duration_18_minutes">"١٨ دقيقة"</string>
-    <string name="snooze_duration_19_minutes">"١٩ دقيقة"</string>
-    <string name="snooze_duration_20_minutes">"۲۰ دقيقة"</string>
-    <string name="snooze_duration_21_minutes">"٢١ دقيقة"</string>
-    <string name="snooze_duration_22_minutes">"٢٢ دقيقة"</string>
-    <string name="snooze_duration_23_minutes">"٢٣ دقيقة"</string>
-    <string name="snooze_duration_24_minutes">"٢٤ دقيقة"</string>
-    <string name="snooze_duration_25_minutes">"٢٥ دقيقة"</string>
-    <string name="snooze_duration_26_minutes">"٢٦ دقيقة"</string>
-    <string name="snooze_duration_27_minutes">"٢٧ دقيقة"</string>
-    <string name="snooze_duration_28_minutes">"٢٨ دقيقة"</string>
-    <string name="snooze_duration_29_minutes">"٢٩ دقيقة"</string>
-    <string name="snooze_duration_30_minutes">"٣۰ دقيقة"</string>
     <string name="week_start_title" msgid="4268917518596832096">"بداية الأسبوع يوم"</string>
     <string name="week_start_saturday">السبت</string>
     <string name="week_start_sunday">الأحد</string>
@@ -366,10 +328,7 @@
     <string name="timer_settings" msgid="7955522143086154795">"الموقتات"</string>
     <string name="timer_vibrate_title" msgid="7788920024785587518">"اهتزاز الموقت"</string>
     <string name="timer_paused" msgid="5941160896040771462">"تم إيقاف الموقِّت مؤقتًا"</string>
-    <string name="timers_stopped" msgid="3186191253226005149">"تم إيقاف <xliff:g id="NUMBER">%d</xliff:g> موقِّتات مؤقتُا"</string>
-    <string name="all_timers_stopped_notif" msgid="883027111895833440">"انقر للاطلاع على الموقِّتات التابعة لك"</string>
     <string name="timers_in_use" msgid="5570729467344408506">"<xliff:g id="NUMBER">%d</xliff:g> من الموقتات"</string>
-    <string name="next_timer_notif" msgid="6136454740115613653">"الموقت التالي: <xliff:g id="TIME_REMAINING">%s</xliff:g>"</string>
     <string name="expand_alarm" msgid="7392616528943305020">"توسيع المنبّه"</string>
     <string name="collapse_alarm" msgid="3561772046433483980">"تصغير المنبّه"</string>
     <string name="alarm_deleted" msgid="6131529309389084785">"تم حذف المنبّه."</string>

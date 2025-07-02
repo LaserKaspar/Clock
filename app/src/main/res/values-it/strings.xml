@@ -112,44 +112,6 @@
     <string name="auto_silence_20_minutes">20 minuti</string>
     <string name="auto_silence_25_minutes">25 minuti</string>
     <string name="label_off">Spento</string>
-    <string name="crescendo_5_seconds">5 secondi</string>
-    <string name="crescendo_10_seconds">10 secondi</string>
-    <string name="crescendo_15_seconds">15 secondi</string>
-    <string name="crescendo_20_seconds">20 secondi</string>
-    <string name="crescendo_30_seconds">30 secondi</string>
-    <string name="crescendo_40_seconds">40 secondi</string>
-    <string name="crescendo_50_seconds">50 secondi</string>
-    <string name="crescendo_60_seconds">60 secondi</string>
-    <string name="snooze_duration_1_minute">1 minuto</string>
-    <string name="snooze_duration_2_minutes">2 minuti</string>
-    <string name="snooze_duration_3_minutes">3 minuti</string>
-    <string name="snooze_duration_4_minutes">4 minuti</string>
-    <string name="snooze_duration_5_minutes">5 minuti</string>
-    <string name="snooze_duration_6_minutes">6 minuti</string>
-    <string name="snooze_duration_7_minutes">7 minuti</string>
-    <string name="snooze_duration_8_minutes">8 minuti</string>
-    <string name="snooze_duration_9_minutes">9 minuti</string>
-    <string name="snooze_duration_10_minutes">10 minuti</string>
-    <string name="snooze_duration_11_minutes">11 minuti</string>
-    <string name="snooze_duration_12_minutes">12 minuti</string>
-    <string name="snooze_duration_13_minutes">13 minuti</string>
-    <string name="snooze_duration_14_minutes">14 minuti</string>
-    <string name="snooze_duration_15_minutes">15 minuti</string>
-    <string name="snooze_duration_16_minutes">16 minuti</string>
-    <string name="snooze_duration_17_minutes">17 minuti</string>
-    <string name="snooze_duration_18_minutes">18 minuti</string>
-    <string name="snooze_duration_19_minutes">19 minuti</string>
-    <string name="snooze_duration_20_minutes">20 minuti</string>
-    <string name="snooze_duration_21_minutes">21 minuti</string>
-    <string name="snooze_duration_22_minutes">22 minuti</string>
-    <string name="snooze_duration_23_minutes">23 minuti</string>
-    <string name="snooze_duration_24_minutes">24 minuti</string>
-    <string name="snooze_duration_25_minutes">25 minuti</string>
-    <string name="snooze_duration_26_minutes">26 minuti</string>
-    <string name="snooze_duration_27_minutes">27 minuti</string>
-    <string name="snooze_duration_28_minutes">28 minuti</string>
-    <string name="snooze_duration_29_minutes">29 minuti</string>
-    <string name="snooze_duration_30_minutes">30 minuti</string>
     <string name="week_start_title" msgid="4268917518596832096">"Inizia la settimana di"</string>
     <string name="week_start_saturday">Sabato</string>
     <string name="week_start_sunday">Domenica</string>
@@ -340,10 +302,7 @@
     <string name="timer_settings" msgid="7955522143086154795">"Timer"</string>
     <string name="timer_vibrate_title" msgid="7788920024785587518">"Vibrazione timer"</string>
     <string name="timer_paused" msgid="5941160896040771462">"Timer in pausa"</string>
-    <string name="timers_stopped" msgid="3186191253226005149">"<xliff:g id="NUMBER">%d</xliff:g> timer in pausa"</string>
-    <string name="all_timers_stopped_notif" msgid="883027111895833440">"Tocca per visualizzare i timer"</string>
     <string name="timers_in_use" msgid="5570729467344408506">"<xliff:g id="NUMBER">%d</xliff:g> timer"</string>
-    <string name="next_timer_notif" msgid="6136454740115613653">"Prossimo timer: <xliff:g id="TIME_REMAINING">%s</xliff:g>"</string>
     <string name="expand_alarm" msgid="7392616528943305020">"Espandi sveglia"</string>
     <string name="collapse_alarm" msgid="3561772046433483980">"Comprimi sveglia"</string>
     <string name="alarm_deleted" msgid="6131529309389084785">"Sveglia eliminata"</string>
@@ -655,7 +614,7 @@
     <string name="blue_accent_color">Blu</string>
     <string name="settings_language_korean">Coreano</string>
     <string name="timer_button_time_minutes_warning_box_text">Inserisci un valore tra 0 e 60 minuti</string>
-    <string name="timer_button_time_warning_box_title">Valore inserito non valido</string>
+    <string name="timer_time_warning_box_title">Valore inserito non valido</string>
     <string name="toast_message_for_reset">Ripristino completato</string>
     <string name="settings_tab_to_display">Scheda da visualizzare all\'apertura dell\'applicazione</string>
     <string name="last_tab_used_title">Ultima scheda utilizzata</string>

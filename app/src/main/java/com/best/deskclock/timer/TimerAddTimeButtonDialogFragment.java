@@ -95,7 +95,7 @@ public class TimerAddTimeButtonDialogFragment extends DialogFragment {
 
         final FragmentTransaction tx = manager.beginTransaction();
 
-        // Remove existing instance of LabelDialogFragment if necessary.
+        // Remove existing instance of this DialogFragment if necessary.
         final Fragment existing = manager.findFragmentByTag(TAG);
         if (existing != null) {
             tx.remove(existing);
@@ -108,7 +108,7 @@ public class TimerAddTimeButtonDialogFragment extends DialogFragment {
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
-        // As long as the add time button box exists, save its state.
+        // As long as this dialog exists, save its state.
         if (mEditMinutes != null && mEditSeconds != null) {
             outState.putString(ARG_EDIT_MINUTES, Objects.requireNonNull(mEditMinutes.getText()).toString());
             outState.putString(ARG_EDIT_SECONDS, Objects.requireNonNull(mEditSeconds.getText()).toString());
@@ -186,7 +186,7 @@ public class TimerAddTimeButtonDialogFragment extends DialogFragment {
                 new MaterialAlertDialogBuilder(requireContext())
                         .setIcon(drawable)
                         .setTitle(isInvalidInput(inputMinutesText, inputSecondsText)
-                                ? getString(R.string.timer_button_time_warning_box_title)
+                                ? getString(R.string.timer_time_warning_box_title)
                                 : getString(R.string.timer_button_time_box_title))
                         .setView(view)
                         .setPositiveButton(android.R.string.ok, (dialog, which) -> {
@@ -285,7 +285,7 @@ public class TimerAddTimeButtonDialogFragment extends DialogFragment {
 
         AlertDialog alertDialog = (AlertDialog) requireDialog();
         alertDialog.setIcon(drawable);
-        alertDialog.setTitle(getString(R.string.timer_button_time_warning_box_title));
+        alertDialog.setTitle(getString(R.string.timer_time_warning_box_title));
 
         String minutesText = Objects.requireNonNull(mEditMinutes.getText()).toString();
         String secondsText = Objects.requireNonNull(mEditSeconds.getText()).toString();

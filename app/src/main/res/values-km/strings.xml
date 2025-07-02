@@ -94,44 +94,6 @@
     <string name="auto_silence_20_minutes">២០ នាទី</string>
     <string name="auto_silence_25_minutes">២៥ នាទី</string>
     <string name="label_off">បិទ</string>
-    <string name="crescendo_5_seconds">5 វិនាទី</string>
-    <string name="crescendo_10_seconds">10 វិនាទី</string>
-    <string name="crescendo_15_seconds">15 វិនាទី</string>
-    <string name="crescendo_20_seconds">20 វិនាទី</string>
-    <string name="crescendo_30_seconds">30 វិនាទី</string>
-    <string name="crescendo_40_seconds">40 វិនាទី</string>
-    <string name="crescendo_50_seconds">50 វិនាទី</string>
-    <string name="crescendo_60_seconds">60 វិនាទី</string>
-    <string name="snooze_duration_1_minute">1 នាទី</string>
-    <string name="snooze_duration_2_minutes">2 នាទី</string>
-    <string name="snooze_duration_3_minutes">3 នាទី</string>
-    <string name="snooze_duration_4_minutes">4 នាទី</string>
-    <string name="snooze_duration_5_minutes">5 នាទី</string>
-    <string name="snooze_duration_6_minutes">6 នាទី</string>
-    <string name="snooze_duration_7_minutes">7 នាទី</string>
-    <string name="snooze_duration_8_minutes">8 នាទី</string>
-    <string name="snooze_duration_9_minutes">9 នាទី</string>
-    <string name="snooze_duration_10_minutes">10 នាទី</string>
-    <string name="snooze_duration_11_minutes">11 នាទី</string>
-    <string name="snooze_duration_12_minutes">12 នាទី</string>
-    <string name="snooze_duration_13_minutes">13 នាទី</string>
-    <string name="snooze_duration_14_minutes">14 នាទី</string>
-    <string name="snooze_duration_15_minutes">15 នាទី</string>
-    <string name="snooze_duration_16_minutes">16 នាទី</string>
-    <string name="snooze_duration_17_minutes">17 នាទី</string>
-    <string name="snooze_duration_18_minutes">18 នាទី</string>
-    <string name="snooze_duration_19_minutes">19 នាទី</string>
-    <string name="snooze_duration_20_minutes">20 នាទី</string>
-    <string name="snooze_duration_21_minutes">21 នាទី</string>
-    <string name="snooze_duration_22_minutes">22 នាទី</string>
-    <string name="snooze_duration_23_minutes">23 នាទី</string>
-    <string name="snooze_duration_24_minutes">24 នាទី</string>
-    <string name="snooze_duration_25_minutes">25 នាទី</string>
-    <string name="snooze_duration_26_minutes">26 នាទី</string>
-    <string name="snooze_duration_27_minutes">27 នាទី</string>
-    <string name="snooze_duration_28_minutes">28 នាទី</string>
-    <string name="snooze_duration_29_minutes">29 នាទី</string>
-    <string name="snooze_duration_30_minutes">30 នាទី</string>
     <string name="week_start_title" msgid="4268917518596832096">"ចាប់ផ្តើមសប្តាហ៍នៅថ្ងៃ"</string>
     <string name="week_start_saturday">សៅរ៍</string>
     <string name="week_start_sunday">អាទិត្យ</string>
@@ -321,10 +283,7 @@
     <string name="timer_settings" msgid="7955522143086154795">"កម្មវិធីកំណត់ពេល"</string>
     <string name="timer_vibrate_title" msgid="7788920024785587518">"ការញ័រនៃកម្មវិធីកំណត់ម៉ោង"</string>
     <string name="timer_paused" msgid="5941160896040771462">"បានផ្អាកកម្មវិធីកំណត់ម៉ោង"</string>
-    <string name="timers_stopped" msgid="3186191253226005149">"បានផ្អាកកម្មវិធីកំណត់ពេល <xliff:g id="NUMBER">%d</xliff:g>"</string>
-    <string name="all_timers_stopped_notif" msgid="883027111895833440">"ប៉ះដើម្បីមើលកម្មវិធីកំណត់ពេលរបស់អ្នក"</string>
     <string name="timers_in_use" msgid="5570729467344408506">"<xliff:g id="NUMBER">%d</xliff:g> កម្មវិធី​កំណត់​ពេល"</string>
-    <string name="next_timer_notif" msgid="6136454740115613653">"កម្មវិធី​កំណត់​ម៉ោង​បន្ទាប់៖ <xliff:g id="TIME_REMAINING">%s</xliff:g>"</string>
     <string name="expand_alarm" msgid="7392616528943305020">"ពង្រីក​សំឡេង​រោទ៍"</string>
     <string name="collapse_alarm" msgid="3561772046433483980">"បង្រួម​សំឡេង​រោទ៍"</string>
     <string name="alarm_deleted" msgid="6131529309389084785">"បានលុបម៉ោងរោទិ៍"</string>

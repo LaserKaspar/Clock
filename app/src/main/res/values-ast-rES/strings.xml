@@ -79,44 +79,6 @@
     <string name="auto_silence_20_minutes">20 minutos</string>
     <string name="auto_silence_25_minutes">25 minutos</string>
     <string name="label_off">Non</string>
-    <string name="crescendo_5_seconds">5 seconds</string>
-    <string name="crescendo_10_seconds">10 seconds</string>
-    <string name="crescendo_15_seconds">15 seconds</string>
-    <string name="crescendo_20_seconds">20 seconds</string>
-    <string name="crescendo_30_seconds">30 seconds</string>
-    <string name="crescendo_40_seconds">40 seconds</string>
-    <string name="crescendo_50_seconds">50 seconds</string>
-    <string name="crescendo_60_seconds">60 seconds</string>
-    <string name="snooze_duration_1_minute">1 minutu</string>
-    <string name="snooze_duration_2_minutes">2 minutos</string>
-    <string name="snooze_duration_3_minutes">3 minutos</string>
-    <string name="snooze_duration_4_minutes">4 minutos</string>
-    <string name="snooze_duration_5_minutes">5 minutos</string>
-    <string name="snooze_duration_6_minutes">6 minutos</string>
-    <string name="snooze_duration_7_minutes">7 minutos</string>
-    <string name="snooze_duration_8_minutes">8 minutos</string>
-    <string name="snooze_duration_9_minutes">9 minutos</string>
-    <string name="snooze_duration_10_minutes">10 minutos</string>
-    <string name="snooze_duration_11_minutes">11 minutos</string>
-    <string name="snooze_duration_12_minutes">12 minutos</string>
-    <string name="snooze_duration_13_minutes">13 minutos</string>
-    <string name="snooze_duration_14_minutes">14 minutos</string>
-    <string name="snooze_duration_15_minutes">15 minutos</string>
-    <string name="snooze_duration_16_minutes">16 minutos</string>
-    <string name="snooze_duration_17_minutes">17 minutos</string>
-    <string name="snooze_duration_18_minutes">18 minutos</string>
-    <string name="snooze_duration_19_minutes">19 minutos</string>
-    <string name="snooze_duration_20_minutes">20 minutos</string>
-    <string name="snooze_duration_21_minutes">21 minutos</string>
-    <string name="snooze_duration_22_minutes">22 minutos</string>
-    <string name="snooze_duration_23_minutes">23 minutos</string>
-    <string name="snooze_duration_24_minutes">24 minutos</string>
-    <string name="snooze_duration_25_minutes">25 minutos</string>
-    <string name="snooze_duration_26_minutes">26 minutos</string>
-    <string name="snooze_duration_27_minutes">27 minutos</string>
-    <string name="snooze_duration_28_minutes">28 minutos</string>
-    <string name="snooze_duration_29_minutes">29 minutos</string>
-    <string name="snooze_duration_30_minutes">30 minutos</string>
     <string name="week_start_title">Entamar la selmana el</string>
     <string name="week_start_saturday">Sábadu</string>
     <string name="week_start_sunday">Domingu</string>
@@ -300,10 +262,7 @@
     <string name="timer_settings">Temporizadores</string>
     <string name="timer_vibrate_title">Temporizador en vibración</string>
     <string name="timer_paused">Posóse\'l temporizador</string>
-    <string name="timers_stopped"><xliff:g id="Number">%d</xliff:g> temporizadores posaos</string>
-    <string name="all_timers_stopped_notif">Calca pa ver los tos temporizadores</string>
     <string name="timers_in_use"><xliff:g id="NUMBER">%d</xliff:g> temporizadores</string>
-    <string name="next_timer_notif">Próximu temporizador: <xliff:g id="TIME_REMAINING">%s</xliff:g></string>
     <string name="expand_alarm">Espander alarma</string>
     <string name="collapse_alarm">Contrayer alarma</string>
     <string name="alarm_deleted">Alarma desaniciada</string>

@@ -112,44 +112,6 @@
     <string name="auto_silence_20_minutes">20 דקות</string>
     <string name="auto_silence_25_minutes">25 דקות</string>
     <string name="label_off">כיבוי</string>
-    <string name="crescendo_5_seconds">5 שניות</string>
-    <string name="crescendo_10_seconds">10 שניות</string>
-    <string name="crescendo_15_seconds">15 שניות</string>
-    <string name="crescendo_20_seconds">20 שניות</string>
-    <string name="crescendo_30_seconds">30 שניות</string>
-    <string name="crescendo_40_seconds">40 שניות</string>
-    <string name="crescendo_50_seconds">50 שניות</string>
-    <string name="crescendo_60_seconds">60 שניות</string>
-    <string name="snooze_duration_1_minute">"דקה אחת"</string>
-    <string name="snooze_duration_2_minutes">"2 דקות"</string>
-    <string name="snooze_duration_3_minutes">"3 דקות"</string>
-    <string name="snooze_duration_4_minutes">"4 דקות"</string>
-    <string name="snooze_duration_5_minutes">"חמש דקות"</string>
-    <string name="snooze_duration_6_minutes">"6 דקות"</string>
-    <string name="snooze_duration_7_minutes">"7 דקות"</string>
-    <string name="snooze_duration_8_minutes">"8 דקות"</string>
-    <string name="snooze_duration_9_minutes">"9 דקות"</string>
-    <string name="snooze_duration_10_minutes">"עשר דקות"</string>
-    <string name="snooze_duration_11_minutes">"11 דקות"</string>
-    <string name="snooze_duration_12_minutes">"12 דקות"</string>
-    <string name="snooze_duration_13_minutes">"13 דקות"</string>
-    <string name="snooze_duration_14_minutes">"14 דקות"</string>
-    <string name="snooze_duration_15_minutes">"15 דקות"</string>
-    <string name="snooze_duration_16_minutes">"16 דקות"</string>
-    <string name="snooze_duration_17_minutes">"17 דקות"</string>
-    <string name="snooze_duration_18_minutes">"18 דקות"</string>
-    <string name="snooze_duration_19_minutes">"19 דקות"</string>
-    <string name="snooze_duration_20_minutes">"20 דקות"</string>
-    <string name="snooze_duration_21_minutes">"21 דקות"</string>
-    <string name="snooze_duration_22_minutes">"22 דקות"</string>
-    <string name="snooze_duration_23_minutes">"23 דקות"</string>
-    <string name="snooze_duration_24_minutes">"24 דקות"</string>
-    <string name="snooze_duration_25_minutes">"25 דקות"</string>
-    <string name="snooze_duration_26_minutes">"26 דקות"</string>
-    <string name="snooze_duration_27_minutes">"27 דקות"</string>
-    <string name="snooze_duration_28_minutes">"28 דקות"</string>
-    <string name="snooze_duration_29_minutes">"29 דקות"</string>
-    <string name="snooze_duration_30_minutes">"30 דקות"</string>
     <string name="week_start_title" msgid="4268917518596832096">"השבוע מתחיל ב-"</string>
     <string name="week_start_saturday">שבת</string>
     <string name="week_start_sunday">ראשון</string>
@@ -339,10 +301,7 @@
     <string name="timer_settings" msgid="7955522143086154795">"טיימרים"</string>
     <string name="timer_vibrate_title" msgid="7788920024785587518">"רטט טיימר"</string>
     <string name="timer_paused" msgid="5941160896040771462">"הטיימר מושהה"</string>
-    <string name="timers_stopped" msgid="3186191253226005149">"<xliff:g id="NUMBER">%d</xliff:g> טיימרים הושהו"</string>
-    <string name="all_timers_stopped_notif" msgid="883027111895833440">"הקש כדי לראות את הטיימרים שלך"</string>
     <string name="timers_in_use" msgid="5570729467344408506">"<xliff:g id="NUMBER">%d</xliff:g> טיימרים"</string>
-    <string name="next_timer_notif" msgid="6136454740115613653">"הטיימר הבא: <xliff:g id="TIME_REMAINING">%s</xliff:g>"</string>
     <string name="expand_alarm" msgid="7392616528943305020">"הרחב התראה"</string>
     <string name="collapse_alarm" msgid="3561772046433483980">"כווץ התראה"</string>
     <string name="alarm_deleted" msgid="6131529309389084785">"ההתראה נמחקה"</string>

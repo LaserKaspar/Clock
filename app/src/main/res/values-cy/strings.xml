@@ -137,44 +137,6 @@
     <string name="auto_silence_20_minutes">20 munud</string>
     <string name="auto_silence_25_minutes">25 munud</string>
     <string name="label_off">I ffwrdd</string>
-    <string name="crescendo_5_seconds">5 eiliad</string>
-    <string name="crescendo_10_seconds">10 eiliad</string>
-    <string name="crescendo_15_seconds">15 eiliad</string>
-    <string name="crescendo_20_seconds">20 eiliad</string>
-    <string name="crescendo_30_seconds">30 eiliad</string>
-    <string name="crescendo_40_seconds">40 eiliad</string>
-    <string name="crescendo_50_seconds">50 eiliad</string>
-    <string name="crescendo_60_seconds">60 eiliad</string>
-    <string name="snooze_duration_1_minute">1 munud</string>
-    <string name="snooze_duration_2_minutes">2 munud</string>
-    <string name="snooze_duration_3_minutes">3 munud</string>
-    <string name="snooze_duration_4_minutes">4 munud</string>
-    <string name="snooze_duration_5_minutes">5 munud</string>
-    <string name="snooze_duration_6_minutes">6 munud</string>
-    <string name="snooze_duration_7_minutes">7 munud</string>
-    <string name="snooze_duration_8_minutes">8 munud</string>
-    <string name="snooze_duration_9_minutes">9 munud</string>
-    <string name="snooze_duration_10_minutes">10 munud</string>
-    <string name="snooze_duration_11_minutes">11 munud</string>
-    <string name="snooze_duration_12_minutes">12 munud</string>
-    <string name="snooze_duration_13_minutes">13 munud</string>
-    <string name="snooze_duration_14_minutes">14 munud</string>
-    <string name="snooze_duration_15_minutes">15 munud</string>
-    <string name="snooze_duration_16_minutes">16 munud</string>
-    <string name="snooze_duration_17_minutes">17 munud</string>
-    <string name="snooze_duration_18_minutes">18 munud</string>
-    <string name="snooze_duration_19_minutes">19 munud</string>
-    <string name="snooze_duration_20_minutes">20 munud</string>
-    <string name="snooze_duration_21_minutes">21 munud</string>
-    <string name="snooze_duration_22_minutes">22 munud</string>
-    <string name="snooze_duration_23_minutes">23 munud</string>
-    <string name="snooze_duration_24_minutes">24 munud</string>
-    <string name="snooze_duration_25_minutes">25 munud</string>
-    <string name="snooze_duration_26_minutes">26 munud</string>
-    <string name="snooze_duration_27_minutes">27 munud</string>
-    <string name="snooze_duration_28_minutes">28 munud</string>
-    <string name="snooze_duration_29_minutes">29 munud</string>
-    <string name="snooze_duration_30_minutes">30 munud</string>
     <string name="week_start_title">Dechrau\'r wythnos ar</string>
     <string name="week_start_saturday">Dydd Sadwrn</string>
     <string name="week_start_sunday">Dydd Sul</string>
@@ -364,10 +326,7 @@
     <string name="timer_settings">Amseryddion</string>
     <string name="timer_vibrate_title">Dirgryniad amserydd</string>
     <string name="timer_paused">Amserydd wedi ei rewi</string>
-    <string name="timers_stopped"><xliff:g example="7" id="number">%d</xliff:g> amserydd wedi eu hoedi</string>
-    <string name="all_timers_stopped_notif">Tapia i weld dy amseryddion</string>
     <string name="timers_in_use"><xliff:g example="7" id="number">%d</xliff:g> amserydd</string>
-    <string name="next_timer_notif">Amserydd nesaf: <xliff:g example="2 minutes remaining" id="time_remaining">%s</xliff:g></string>
     <string name="expand_alarm">Ehangu\'r larwm</string>
     <string name="collapse_alarm">Lleihau\'r larwm</string>
     <string name="alarm_deleted">Dilëwyd y larwm</string>

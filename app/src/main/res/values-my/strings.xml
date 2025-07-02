@@ -94,44 +94,6 @@
     <string name="auto_silence_20_minutes">၂၀ မိနစ်</string>
     <string name="auto_silence_25_minutes">၂၅ မိနစ်</string>
     <string name="label_off">ပိတ်ထားသည်</string>
-    <string name="crescendo_5_seconds">၅ စက္ကန့်</string>
-    <string name="crescendo_10_seconds">၁၀ စက္ကန့်</string>
-    <string name="crescendo_15_seconds">၁၅ စက္ကန့်</string>
-    <string name="crescendo_20_seconds">၂၀ စက္ကန့်</string>
-    <string name="crescendo_30_seconds">၃၀ စက္ကန့်</string>
-    <string name="crescendo_40_seconds">၄၀ စက္ကန့်</string>
-    <string name="crescendo_50_seconds">၅၀ စက္ကန့်</string>
-    <string name="crescendo_60_seconds">၆၀ စက္ကန့်</string>
-    <string name="snooze_duration_1_minute">"၁ မိနစ်"</string>
-    <string name="snooze_duration_2_minutes">"၂ မိနစ်"</string>
-    <string name="snooze_duration_3_minutes">"၃ မိနစ်"</string>
-    <string name="snooze_duration_4_minutes">"၄ မိနစ်"</string>
-    <string name="snooze_duration_5_minutes">"၅ မိနစ်"</string>
-    <string name="snooze_duration_6_minutes">"၆ မိနစ်"</string>
-    <string name="snooze_duration_7_minutes">"၇ မိနစ်"</string>
-    <string name="snooze_duration_8_minutes">"၈ မိနစ်"</string>
-    <string name="snooze_duration_9_minutes">"၉ မိနစ်"</string>
-    <string name="snooze_duration_10_minutes">"၁၀ မိနစ်"</string>
-    <string name="snooze_duration_11_minutes">"၁၁ မိနစ်"</string>
-    <string name="snooze_duration_12_minutes">"၁၂ မိနစ်"</string>
-    <string name="snooze_duration_13_minutes">"၁၃ မိနစ်"</string>
-    <string name="snooze_duration_14_minutes">"၁၄ မိနစ်"</string>
-    <string name="snooze_duration_15_minutes">"၁၅ မိနစ်"</string>
-    <string name="snooze_duration_16_minutes">"၁၆ မိနစ်"</string>
-    <string name="snooze_duration_17_minutes">"၁၇ မိနစ်"</string>
-    <string name="snooze_duration_18_minutes">"၁၈ မိနစ်"</string>
-    <string name="snooze_duration_19_minutes">"၁၉ မိနစ်"</string>
-    <string name="snooze_duration_20_minutes">"၂၀ မိနစ်"</string>
-    <string name="snooze_duration_21_minutes">"၂၁ မိနစ်"</string>
-    <string name="snooze_duration_22_minutes">"၂၂ မိနစ်"</string>
-    <string name="snooze_duration_23_minutes">"၂၃ မိနစ်"</string>
-    <string name="snooze_duration_24_minutes">"၂၄ မိနစ်"</string>
-    <string name="snooze_duration_25_minutes">"၂၅ မိနစ်"</string>
-    <string name="snooze_duration_26_minutes">"၂၆ မိနစ်"</string>
-    <string name="snooze_duration_27_minutes">"၂၇ မိနစ်"</string>
-    <string name="snooze_duration_28_minutes">"၂၈ မိနစ်"</string>
-    <string name="snooze_duration_29_minutes">"၂၉ မိနစ်"</string>
-    <string name="snooze_duration_30_minutes">"၃၀ မိနစ်"</string>
     <string name="week_start_title" msgid="4268917518596832096">"ရက်သတ္တပတ် စရက်"</string>
     <string name="week_start_saturday">စနေနေ့</string>
     <string name="week_start_sunday">တနင်္ဂနွေနေ့</string>
@@ -320,10 +282,7 @@
     <string name="timer_settings" msgid="7955522143086154795">"အချိန်တိုင်းစက်များ"</string>
     <string name="timer_vibrate_title" msgid="7788920024785587518">"တိုင်မာ တုန်ခါမှု"</string>
     <string name="timer_paused" msgid="5941160896040771462">"တိုင်မာ ရပ်တန့်ထား"</string>
-    <string name="timers_stopped" msgid="3186191253226005149">"တိုင်မာ <xliff:g id="NUMBER">%d</xliff:g> ကြိမ် ရပ်တန့်ခဲ့"</string>
-    <string name="all_timers_stopped_notif" msgid="883027111895833440">"အချိန်မှတ်ကိရိယာကို မြင်နိုင်ရန် တို့ထိပါ"</string>
     <string name="timers_in_use" msgid="5570729467344408506">"တိုင်မာ <xliff:g id="NUMBER">%d</xliff:g>"</string>
-    <string name="next_timer_notif" msgid="6136454740115613653">"နောက် တိုင်မာ တစ်ခု: <xliff:g id="TIME_REMAINING">%s</xliff:g>"</string>
     <string name="expand_alarm" msgid="7392616528943305020">"နှိုးစက်ကို တိုးချဲ့ရန်"</string>
     <string name="collapse_alarm" msgid="3561772046433483980">"နှိုးစက်ကို ခေါက်သိမ်းပါ"</string>
     <string name="alarm_deleted" msgid="6131529309389084785">"နိုးစက်ဖျက်လိုက်ပြီ"</string>
