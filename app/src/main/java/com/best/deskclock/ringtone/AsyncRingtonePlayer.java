@@ -8,10 +8,8 @@ import android.media.AudioFocusRequest;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.Ringtone;
-import android.media.RingtoneManager;
 import android.net.Uri;
 
-import com.best.deskclock.R;
 import com.best.deskclock.utils.LogUtils;
 import com.best.deskclock.utils.RingtoneUtils;
 import com.best.deskclock.utils.SdkUtils;
@@ -66,44 +64,7 @@ public final class AsyncRingtonePlayer {
     private MediaPlayerPlaybackDelegate mPlaybackDelegate;
 
     public AsyncRingtonePlayer(Context context) {
-        // Use a DirectBoot aware context if supported
-        if (SdkUtils.isAtLeastAndroid7()) {
-            mContext = context.createDeviceProtectedStorageContext();
-        }
-        else {
-            mContext = context;
-        }
-    }
-
-    /**
-     * @return <code>true</code> iff the device is currently in a telephone call
-     */
-    private static boolean isInTelephoneCall(AudioManager audioManager) {
-        final int audioMode = audioManager.getMode();
-        if (SdkUtils.isAtLeastAndroid13()) {
-            return audioMode == AudioManager.MODE_IN_COMMUNICATION ||
-                    audioMode == AudioManager.MODE_COMMUNICATION_REDIRECT ||
-                    audioMode == AudioManager.MODE_CALL_REDIRECT ||
-                    audioMode == AudioManager.MODE_CALL_SCREENING ||
-                    audioMode == AudioManager.MODE_IN_CALL;
-        } else {
-            return audioMode == AudioManager.MODE_IN_COMMUNICATION ||
-                    audioMode == AudioManager.MODE_IN_CALL;
-        }
-    }
-
-    /**
-     * @return Uri of the ringtone to play when the user is in a telephone call
-     */
-    private static Uri getInCallRingtoneUri(Context context) {
-        return RingtoneUtils.getResourceUri(context, R.raw.alarm_expire);
-    }
-
-    /**
-     * @return Uri of the ringtone to play when the chosen ringtone fails to play
-     */
-    private static Uri getFallbackRingtoneUri(Context context) {
-        return RingtoneUtils.getResourceUri(context, R.raw.alarm_expire);
+        mContext = context;
     }
 
     /**
@@ -138,7 +99,8 @@ public final class AsyncRingtonePlayer {
             if (getPlaybackDelegate().play(mContext, ringtoneUri, crescendoDuration)) {
                 scheduleVolumeAdjustment();
             }
-        });    }
+        });
+    }
 
     /**
      * Stops playing the ringtone.
@@ -216,17 +178,17 @@ public final class AsyncRingtonePlayer {
             mCrescendoDuration = crescendoDuration;
 
             mAudioManager = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
-            boolean inCall = isInTelephoneCall(mAudioManager);
+            boolean inCall = RingtoneUtils.isInTelephoneCall(mAudioManager);
 
             if (inCall) {
-                ringtoneUri = getInCallRingtoneUri(context);
+                ringtoneUri = RingtoneUtils.getInCallRingtoneUri(context);
             }
 
+            ringtoneUri = RingtoneUtils.hardenRingtoneURI(context, ringtoneUri);
+
             mMediaPlayer = RingtoneUtils.createPreparedMediaPlayer(
-                    context,
-                    ringtoneUri,
-                    RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM),
-                    getFallbackRingtoneUri(context)
+                context,
+                ringtoneUri
             );
 
             if (mMediaPlayer == null) {

@@ -13,7 +13,6 @@ import android.media.AudioDeviceCallback;
 import android.media.AudioDeviceInfo;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
-import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
@@ -122,13 +121,7 @@ public final class RingtonePlayer {
      * to dynamically respond to changes in audio output devices, such as Bluetooth connections.</p>
      */
     public RingtonePlayer(Context context) {
-        // Use a DirectBoot aware context if supported
-        if (SdkUtils.isAtLeastAndroid7()) {
-            mContext = context.createDeviceProtectedStorageContext();
-        }
-        else {
-            mContext = context;
-        }
+        mContext = context;
         mAudioManager = (AudioManager) mContext.getSystemService(Context.AUDIO_SERVICE);
 
         mPrefs = getDefaultSharedPreferences(mContext);
@@ -240,13 +233,7 @@ public final class RingtonePlayer {
             ringtoneUri = getInCallRingtoneUri(mContext);
         }
 
-        if (RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM).equals(ringtoneUri)) {
-            ringtoneUri = RingtoneManager.getActualDefaultRingtoneUri(mContext, RingtoneManager.TYPE_ALARM);
-        }
-
-        if (ringtoneUri == null || !RingtoneUtils.isRingtoneUriReadable(mContext, ringtoneUri)) {
-            ringtoneUri = getFallbackRingtoneUri(mContext);
-        }
+        ringtoneUri = RingtoneUtils.hardenRingtoneURI(mContext, ringtoneUri);
 
         mExoPlayer.setMediaItem(MediaItem.fromUri(ringtoneUri));
 
@@ -530,13 +517,6 @@ public final class RingtonePlayer {
      * @return Uri of the ringtone to play when the user is in a telephone call
      */
     private static Uri getInCallRingtoneUri(Context context) {
-        return RingtoneUtils.getResourceUri(context, R.raw.alarm_expire);
-    }
-
-    /**
-     * @return Uri of the ringtone to play when the chosen ringtone fails to play
-     */
-    private static Uri getFallbackRingtoneUri(Context context) {
         return RingtoneUtils.getResourceUri(context, R.raw.alarm_expire);
     }
 

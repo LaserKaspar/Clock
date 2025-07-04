@@ -12,12 +12,12 @@ import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.RingtoneManager;
 import android.net.Uri;
-import android.os.UserManager;
 import android.provider.OpenableColumns;
 
 import androidx.annotation.AnyRes;
 
 import com.best.deskclock.DeskClockApplication;
+import com.best.deskclock.R;
 import com.best.deskclock.data.CustomRingtone;
 import com.best.deskclock.data.RingtoneModel;
 import com.best.deskclock.data.SettingsDAO;
@@ -78,9 +78,7 @@ public class RingtoneUtils {
      * {@code false} otherwise.
      */
     public static boolean isRingtoneUriReadable(Context context, Uri uri) {
-        if (RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM).equals(uri)) {
-            uri = RingtoneManager.getActualDefaultRingtoneUri(context, RingtoneManager.TYPE_ALARM);
-        }
+        uri = upgradeDefaultUri(context, uri);
 
         try (InputStream stream = context.getContentResolver().openInputStream(uri)) {
             return stream != null;
@@ -90,22 +88,68 @@ public class RingtoneUtils {
         }
     }
 
+    public static Uri hardenRingtoneURI(Context context, Uri uri) {
+        LogUtils.i("hardenRingtoneURI");
+
+        uri = upgradeDefaultUri(context, uri);
+
+        if (uri == null || !isRingtoneUriReadable(context, uri)) {
+            Uri fallbackUri = getFallbackRingtoneUri(context);
+            LogUtils.e("Failed to read requested ringtone: " + uri + ". Falling back to " + fallbackUri);
+            uri = fallbackUri;
+        }
+
+        return uri;
+    }
+
+    public static Uri upgradeDefaultUri(Context context, Uri uri) {
+        Uri alarmUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
+        if (alarmUri.equals(uri)) {
+            Uri defaultUri = RingtoneManager.getActualDefaultRingtoneUri(context, RingtoneManager.TYPE_ALARM);
+            LogUtils.i("Default URI detected " + uri + ", upgrading to content uri: " + defaultUri);
+            uri = defaultUri;
+        }
+        return uri;
+    }
+
+    /**
+     * @return {@code true} if the device is currently in a telephone call. {@code false} otherwise.
+     */
+    public static boolean isInTelephoneCall(AudioManager audioManager) {
+        final int audioMode = audioManager.getMode();
+        if (SdkUtils.isAtLeastAndroid13()) {
+            return audioMode == AudioManager.MODE_IN_COMMUNICATION ||
+                    audioMode == AudioManager.MODE_COMMUNICATION_REDIRECT ||
+                    audioMode == AudioManager.MODE_CALL_REDIRECT ||
+                    audioMode == AudioManager.MODE_CALL_SCREENING ||
+                    audioMode == AudioManager.MODE_IN_CALL;
+        } else {
+            return audioMode == AudioManager.MODE_IN_COMMUNICATION ||
+                    audioMode == AudioManager.MODE_IN_CALL;
+        }
+    }
+
+    /**
+     * @return Uri of the ringtone to play when the user is in a telephone call
+     */
+    public static Uri getInCallRingtoneUri(Context context) {
+        return RingtoneUtils.getResourceUri(context, R.raw.alarm_expire);
+    }
+
+    /**
+     * @return Uri of the ringtone to play when the chosen ringtone fails to play
+     */
+    public static Uri getFallbackRingtoneUri(Context context) {
+        return RingtoneUtils.getResourceUri(context, R.raw.alarm_expire);
+    }
+
     /**
      * Creates and prepares a {@link MediaPlayer} instance to play a ringtone.
      *
      * @return A prepared {@link MediaPlayer} instance if successful,
      * or {@code null} if preparation fails.
      */
-    public static MediaPlayer createPreparedMediaPlayer(Context context, Uri... ringtoneUris) {
-        // Use a DirectBoot aware context if supported
-        Context safeContext = context;
-        if (SdkUtils.isAtLeastAndroid7()) {
-            UserManager userManager = (UserManager) context.getSystemService(Context.USER_SERVICE);
-            if (userManager != null && !userManager.isUserUnlocked()) {
-                safeContext = context.createDeviceProtectedStorageContext();
-            }
-        }
-
+    public static MediaPlayer createPreparedMediaPlayer(Context context, Uri ringtoneUri) {
         MediaPlayer player = new MediaPlayer();
 
         player.setAudioAttributes(new AudioAttributes.Builder()
@@ -113,15 +157,13 @@ public class RingtoneUtils {
                 .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
                 .build());
 
-        for (Uri uri : ringtoneUris) {
-            try {
-                player.reset();
-                player.setDataSource(safeContext, uri);
-                player.prepare();
-                return player;
-            } catch (IOException e) {
-                LogUtils.e("Failed to prepare MediaPlayer for URI: " + uri, e);
-            }
+        try {
+            player.reset();
+            player.setDataSource(context, ringtoneUri);
+            player.prepare();
+            return player;
+        } catch (IOException e) {
+            LogUtils.e("Failed to prepare MediaPlayer for URI: " + ringtoneUri, e);
         }
 
         player.release();
@@ -134,8 +176,7 @@ public class RingtoneUtils {
     public static int getRingtoneDuration(Context context, Uri ringtoneUri) {
         MediaPlayer player = createPreparedMediaPlayer(
                 context,
-                ringtoneUri,
-                RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM)
+                hardenRingtoneURI(context, ringtoneUri)
         );
 
         if (player == null) {

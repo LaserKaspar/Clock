@@ -9,6 +9,7 @@ package com.best.deskclock.alarms;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.media.AudioAttributes;
+import android.os.UserManager;
 import android.os.VibrationAttributes;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
@@ -58,10 +59,24 @@ final class AlarmKlaxon {
 
         if (!AlarmInstance.NO_RINGTONE_URI.equals(instance.mRingtone)) {
             final long crescendoDuration = SettingsDAO.getAlarmVolumeCrescendoDuration(prefs);
-            if (SettingsDAO.isAdvancedAudioPlaybackEnabled(prefs)) {
-                getRingtonePlayer(context).play(instance.mRingtone, crescendoDuration);
-            } else {
-                getAsyncRingtonePlayer(context).play(instance.mRingtone, crescendoDuration);
+
+            // Use a DirectBoot aware context if needed
+            Context safeContext = context;
+            if (SdkUtils.isAtLeastAndroid7()) {
+                UserManager userManager = (UserManager) context.getSystemService(Context.USER_SERVICE);
+                if (userManager != null && !userManager.isUserUnlocked()) {
+                    LogUtils.i("Using safe context because the phone is locked.");
+                    safeContext = context.createDeviceProtectedStorageContext();
+                }
+            }
+            else {
+                safeContext = context.getApplicationContext();
+            }
+
+            if (SettingsDAO.isAdvancedAudioPlaybackEnabled(prefs)) { // ExoPlayer
+                getRingtonePlayer(safeContext).play(instance.mRingtone, crescendoDuration);
+            } else { // MediaPlayer
+                getAsyncRingtonePlayer(safeContext).play(instance.mRingtone, crescendoDuration);
             }
         }
 
@@ -97,15 +112,6 @@ final class AlarmKlaxon {
         }
     }
 
-    // MediaPlayer
-    private static synchronized AsyncRingtonePlayer getAsyncRingtonePlayer(Context context) {
-        if (sAsyncRingtonePlayer == null) {
-            sAsyncRingtonePlayer = new AsyncRingtonePlayer(context.getApplicationContext());
-        }
-
-        return sAsyncRingtonePlayer;
-    }
-
     public static synchronized void releaseResources() {
         if (sAsyncRingtonePlayer != null) {
             sAsyncRingtonePlayer.shutdown();
@@ -113,10 +119,19 @@ final class AlarmKlaxon {
         }
     }
 
+    // MediaPlayer
+    private static synchronized AsyncRingtonePlayer getAsyncRingtonePlayer(Context context) {
+        if (sAsyncRingtonePlayer == null) {
+            sAsyncRingtonePlayer = new AsyncRingtonePlayer(context);
+        }
+
+        return sAsyncRingtonePlayer;
+    }
+
     // ExoPlayer
     private static synchronized RingtonePlayer getRingtonePlayer(Context context) {
         if (sRingtonePlayer == null) {
-            sRingtonePlayer = new RingtonePlayer(context.getApplicationContext());
+            sRingtonePlayer = new RingtonePlayer(context);
         }
 
         return sRingtonePlayer;
